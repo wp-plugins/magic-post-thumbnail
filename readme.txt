@@ -7,6 +7,8 @@ Requires at least: 3.0
 Tested up to:      3.3.2
 Version:           1.0
 
+Automatically add a thumbnail for your posts. Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
+
 == Description ==
 Automatically add a thumbnail for your posts. 
 Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
