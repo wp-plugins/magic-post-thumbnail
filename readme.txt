@@ -39,6 +39,12 @@ Settings allow you to configure some settings:
 4. Go into a post ( without any featured image ) or create one, update/create it and your thumbnail is generated as featured image !
 
 == Changelog ==
+
+== Changelog ==
 = 1.0 =
 	* First release
 	* Automatically generates featured images
+
+= 1.1 =
+	* Error Message on settings with allow_url_fopen OFF
+	* Less empty image generated
