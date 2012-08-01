@@ -1,11 +1,11 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           1.0
-Tags:              automatic, thumbnail, featured, image, google image, magic
+Version:           1.1
+Tags:              automatic, thumbnail, featured, image, google, generate, google image, magic
 Author URI:        alex.re
 Author:            Mcurly
 Requires at least: 3.0
-Tested up to:      3.3.2
+Tested up to:      3.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ Settings allow you to configure some settings:
 
 == Installation ==
 = General Requirements =
-* PHP: allow_url_fopen ON
+* PHP: = allow_url_fopen = On
 1. Activate the plugin
 2. Go to Settings > Magic Post Thumbnail
 3. Configure your settings and which post type you want to enable it
@@ -42,3 +42,7 @@ Settings allow you to configure some settings:
 = 1.0 =
 	* First release
 	* Automatically generates featured images
+
+= 1.1 =
+	* Error Message on settings with allow_url_fopen OFF
+	* Less empty image generated

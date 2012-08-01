@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Magic Post Thumbnail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-12 00:57+0100\n"
-"PO-Revision-Date: 2012-05-12 00:57+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2012-08-01 20:16+0100\n"
+"PO-Revision-Date: 2012-08-01 20:16+0100\n"
+"Last-Translator: Alex\n"
 "Language-Team:  <g.alex17@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,147 +18,151 @@ msgstr ""
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: magic_post_thumnail.php:133
+#: magic_post_thumnail.php:159
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Vous n'avez pas d'autorisations suffisantes pour accéder à cette page."
 
-#: magic_post_thumnail.php:138
+#: magic_post_thumnail.php:164
 msgid "Google Image Search Preferences"
 msgstr "Préférences de la recherche Google Image"
 
-#: magic_post_thumnail.php:144
+#: magic_post_thumnail.php:171
 msgid "Google Safe search"
 msgstr ""
 
-#: magic_post_thumnail.php:146
+#: magic_post_thumnail.php:173
 msgid "Off"
 msgstr ""
 
-#: magic_post_thumnail.php:147
+#: magic_post_thumnail.php:174
 msgid "On"
 msgstr ""
 
-#: magic_post_thumnail.php:149
+#: magic_post_thumnail.php:176
 msgid "Safe mode protects images sexually explicit"
 msgstr "Le mode Safe protège des images à caractère sexuel explicite"
 
-#: magic_post_thumnail.php:152
+#: magic_post_thumnail.php:179
 msgid "Choose your Google country's search"
 msgstr "Choisissez votre pays de recherche Google"
 
-#: magic_post_thumnail.php:157
+#: magic_post_thumnail.php:184
 msgid "International"
 msgstr ""
 
-#: magic_post_thumnail.php:158
+#: magic_post_thumnail.php:185
 msgid "Brazil"
 msgstr "Brésil"
 
-#: magic_post_thumnail.php:159
+#: magic_post_thumnail.php:186
 msgid "Canada"
 msgstr "Canada"
 
-#: magic_post_thumnail.php:160
+#: magic_post_thumnail.php:187
 msgid "China"
 msgstr "Chine"
 
-#: magic_post_thumnail.php:161
+#: magic_post_thumnail.php:188
 msgid "Egypt"
 msgstr "Egypte"
 
-#: magic_post_thumnail.php:162
+#: magic_post_thumnail.php:189
 msgid "France"
 msgstr "France"
 
-#: magic_post_thumnail.php:163
+#: magic_post_thumnail.php:190
 msgid "Germany"
 msgstr "Allemagne"
 
-#: magic_post_thumnail.php:164
+#: magic_post_thumnail.php:191
 msgid "Italia"
 msgstr "Italie"
 
-#: magic_post_thumnail.php:165
+#: magic_post_thumnail.php:192
 msgid "Japan"
 msgstr "Japon"
 
-#: magic_post_thumnail.php:166
+#: magic_post_thumnail.php:193
 msgid "Netherlands"
 msgstr "Pays-Bas"
 
-#: magic_post_thumnail.php:167
+#: magic_post_thumnail.php:194
 msgid "Mexico"
 msgstr "Mexique"
 
-#: magic_post_thumnail.php:168
+#: magic_post_thumnail.php:195
 msgid "Morocco"
 msgstr "Maroque"
 
-#: magic_post_thumnail.php:169
+#: magic_post_thumnail.php:196
 msgid "Peru"
 msgstr "Pérou"
 
-#: magic_post_thumnail.php:170
+#: magic_post_thumnail.php:197
 msgid "South Africa"
 msgstr "Afrique du Sud"
 
-#: magic_post_thumnail.php:171
+#: magic_post_thumnail.php:198
 msgid "Spain"
 msgstr "Espagne"
 
-#: magic_post_thumnail.php:172
+#: magic_post_thumnail.php:199
 msgid "Swiss"
 msgstr "Suisse"
 
-#: magic_post_thumnail.php:173
+#: magic_post_thumnail.php:200
 msgid "UK"
 msgstr "Royaume-Uni"
 
-#: magic_post_thumnail.php:174
+#: magic_post_thumnail.php:201
 msgid "USA"
 msgstr "États-Unis"
 
-#: magic_post_thumnail.php:183
+#: magic_post_thumnail.php:210
 msgid "Country's google search"
 msgstr "Pays sur lequel porte la recherche"
 
-#: magic_post_thumnail.php:186
+#: magic_post_thumnail.php:213
 msgid "Usage rights"
 msgstr "Droits d'usage"
 
-#: magic_post_thumnail.php:188
+#: magic_post_thumnail.php:215
 msgid "not filtered by license"
 msgstr "non filtré par licence"
 
-#: magic_post_thumnail.php:189
+#: magic_post_thumnail.php:216
 msgid "free to use or share"
 msgstr "libre de droits d'usage ou de distribution"
 
-#: magic_post_thumnail.php:190
+#: magic_post_thumnail.php:217
 msgid "free to use or share, even commercially"
 msgstr "libre de droits d'usage ou de distribution, y compris à des fins commerciales"
 
-#: magic_post_thumnail.php:191
+#: magic_post_thumnail.php:218
 msgid "free to use share or modify"
 msgstr "libre de droits d'usage, de distribution ou de modification"
 
-#: magic_post_thumnail.php:192
+#: magic_post_thumnail.php:219
 msgid "free to use, share or modify, even commercially"
 msgstr "libre de droits d'usage, de distribution ou de modification, y compris à des fins commerciales"
 
-#: magic_post_thumnail.php:194
+#: magic_post_thumnail.php:221
 msgid "Filter only images royalty-free ... <b> Warning </b>: These filters can reduce the relevance of some results"
 msgstr "Filtre uniquement les images libre de droit... <b>Attention</b> : ces filtres peuvent réduire\t la pertinence de certains résultats"
 
-#: magic_post_thumnail.php:198
-msgid "Relevant post type :"
+#: magic_post_thumnail.php:225
+msgid "Relevant post type"
 msgstr "Type de contenus concernés"
 
-#: magic_post_thumnail.php:218
+#: magic_post_thumnail.php:245
 msgid "Save Options"
 msgstr "Enregistrer les modifications"
 
-#: magic_post_thumnail.php:262
+#: magic_post_thumnail.php:251
+msgid "Sorry, your server require allow_url_fopen ON, please update your server before using this plugin"
+msgstr "Désolé, allow_url_fopen doit être activé, veuillez s'il vous plait mettre à jour votre serveur afin d'utiliser ce plugin."
+
+#: magic_post_thumnail.php:290
 msgid "Settings"
 msgstr "Paramètres"
 
