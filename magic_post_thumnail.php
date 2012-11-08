@@ -71,7 +71,9 @@ class MPT_backoffice {
 		$safe =( !empty( $options['google_safe']) )? $options['google_safe'] : 'off' ;
 		$country =( !empty( $options['search_country']) )? $options['search_country'] : 'com' ;
 		$rights =( !empty( $options['rights']) )? $options['rights'] : '' ;
-		$url = "http://www.google.$country&site=images&source=gp&q=$search&channel=gp1&og=gp&start=0&sa=N&tbs=$rights&safe=$safe&";
+		$url = "http://www.google.$country&site=images&source=gp&q=$search&channel=gp1&og=gp&start=0&sa=N&tbs=$rights&safe=$safe&tbm=isch";
+		var_dump( $url );
+		//die();
 		
 		$url = str_replace(" ", "+", $url);
 		

@@ -46,3 +46,6 @@ Settings allow you to configure some settings:
 = 1.1 =
 	* Error Message on settings with allow_url_fopen OFF
 	* Less empty image generated
+
+= 1.2 =
+	* Add "tbm=isch" at the end of the scrapping Google URL. Otherwise it doesn't work any more.
