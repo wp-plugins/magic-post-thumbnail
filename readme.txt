@@ -1,6 +1,6 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           1.1
+Version:           1.2
 Tags:              automatic, thumbnail, featured, image, google, generate, google image, magic
 Author URI:        alex.re
 Author:            Mcurly
