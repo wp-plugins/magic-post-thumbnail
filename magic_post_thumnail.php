@@ -2,7 +2,7 @@
 /*
 Plugin Name: Magic Post Thumbnail
 Description: Automatically add a thumbnail for your posts. Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 1.1
+Version: 1.2
 Author: Alexandre Gaboriau
 Author URI: http://www.alex.re/
 
