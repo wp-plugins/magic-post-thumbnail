@@ -1,6 +1,6 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           1.2
+Version:           1.2.1
 Tags:              automatic, thumbnail, featured, image, google, generate, google image, magic
 Author URI:        alex.re
 Author:            Mcurly
@@ -49,3 +49,6 @@ Settings allow you to configure some settings:
 
 = 1.2 =
 	* Add "tbm=isch" at the end of the scrapping Google URL. Otherwise it doesn't work any more.
+	
+= 1.2.1 =
+	* Last Plugin update fail.. not complete. Fixed.

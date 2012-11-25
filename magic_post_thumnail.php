@@ -2,7 +2,7 @@
 /*
 Plugin Name: Magic Post Thumbnail
 Description: Automatically add a thumbnail for your posts. Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 1.2
+Version: 1.2.1
 Author: Alexandre Gaboriau
 Author URI: http://www.alex.re/
 
@@ -72,8 +72,6 @@ class MPT_backoffice {
 		$country =( !empty( $options['search_country']) )? $options['search_country'] : 'com' ;
 		$rights =( !empty( $options['rights']) )? $options['rights'] : '' ;
 		$url = "http://www.google.$country&site=images&source=gp&q=$search&channel=gp1&og=gp&start=0&sa=N&tbs=$rights&safe=$safe&tbm=isch";
-		var_dump( $url );
-		//die();
 		
 		$url = str_replace(" ", "+", $url);
 		
