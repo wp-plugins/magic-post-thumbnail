@@ -42,6 +42,7 @@ class MPT_backoffice {
         add_action('admin_enqueue_scripts', array( &$this, 'apt_admin_enqueues' ) ); // Plugin hook for adding CSS and JS files required for this plugin
 		
         add_filter( 'bulk_actions-edit-post', array( &$this, 'add_bulk_actions' ) );
+		add_filter( 'bulk_actions-edit-page', array( &$this, 'add_bulk_actions' ) );
         add_action( 'admin_action_bulk_regenerate_thumbnails2', array( &$this, 'mpt_bulk_action_handler' ) ); // Top drowndown
 		
 		add_action( 'add_meta_boxes', array( &$this, 'MPT_add_custom_box' ) );
