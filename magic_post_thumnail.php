@@ -2,12 +2,12 @@
 /*
 Plugin Name: Magic Post Thumbnail
 Description: Automatically add a thumbnail for your posts. Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 1.2.1
+Version: 1.3
 Author: Alexandre Gaboriau
 Author URI: http://www.alex.re/
 
 
-Copyright 2012 Alexandre Gaboriau (contact@alexandregaboriau.fr)
+Copyright 2013 Alexandre Gaboriau (contact@alexandregaboriau.fr)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -39,40 +39,67 @@ class MPT_backoffice {
 		
 		load_plugin_textdomain( 'mpt', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		
+        add_action('admin_enqueue_scripts', array( &$this, 'apt_admin_enqueues' ) ); // Plugin hook for adding CSS and JS files required for this plugin
+		
+        add_filter( 'bulk_actions-edit-post', array( &$this, 'add_bulk_actions' ) );
+        add_action( 'admin_action_bulk_regenerate_thumbnails2', array( &$this, 'mpt_bulk_action_handler' ) ); // Top drowndown
+		
+		add_action( 'add_meta_boxes', array( &$this, 'MPT_add_custom_box' ) );
+		add_action( 'save_post', array( &$this, 'MPT_save_postdata' ) );
     }
 	
+	public function apt_admin_enqueues() {
+		wp_enqueue_script( 'jquery-ui-progressbar', plugins_url( 'jquery-ui/jquery-ui.js', __FILE__ ), array( 'jquery-ui-core' ) );
+		wp_enqueue_script( 'images-genration', plugins_url( 'jquery-ui/generation.js', __FILE__ ), array( 'jquery-ui-progressbar' ) );
+		wp_enqueue_style( 'style-jquery-ui', plugins_url( 'jquery-ui/jquery-ui.css', __FILE__ ) );
+		wp_enqueue_style( 'style-admin-mpt', plugins_url( 'css/admin-style.css', __FILE__ ) );	
+	}
+    
+    public function mpt_bulk_action_handler() {
+        $ids = implode( ',', array_map( 'intval', $_REQUEST['post'] ) );
+        wp_redirect(  'options-general.php?page=mpt&ids=' . $ids );
+        exit();
+    }
+    
+    
+    public function add_bulk_actions( $actions ) {
+?>
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $('select[name^="action"] option:last-child').before('<option value="bulk_regenerate_thumbnails2"><?php echo esc_attr( __( 'Generate Magic Post thumbnail', 'mpt' ) ); ?></option>');
+            });
+        </script>
+<?php
+		return $actions;
+    }
 	
 	/* Retrieve Image from Google, save it into Media Library, and attach it to the post as featured image */
-    public function create_thumb() {
+    public function create_thumb( $id, $check_value_enable = 1 ) {
 		
 		error_reporting(0);
 		
 		if( !current_user_can('upload_files') )
 			return false;
-		
-		$id = get_the_ID();
+			
 		
 		$post_type_availables = get_option( 'MPT_plugin_settings' );
 		$post_type_availables = $post_type_availables['choosed_post_type'];
 		
-		if( !in_array( get_post_type($id), $post_type_availables ) ) {
+        if( $check_value_enable == '1' && get_post_meta( $id, '_mpt_value_key', true ) != '1' )
 			return false;
-		}
-		
-		if( has_post_thumbnail( $id ) ) {
+        
+		if( !in_array( get_post_type($id), $post_type_availables ) || has_post_thumbnail( $id ) )
 			return false;
-		}
 		
 		$search = get_the_title( $id );
 		
-		//$search = str_replace( ' ' ,'+', $search );
 		$search = urlencode( $search );
 		$options = get_option( 'MPT_plugin_settings' );
 		$safe =( !empty( $options['google_safe']) )? $options['google_safe'] : 'off' ;
 		$country =( !empty( $options['search_country']) )? $options['search_country'] : 'com' ;
 		$rights =( !empty( $options['rights']) )? $options['rights'] : '' ;
 		$url = "http://www.google.$country&site=images&source=gp&q=$search&channel=gp1&og=gp&start=0&sa=N&tbs=$rights&safe=$safe&tbm=isch";
-		
+        
 		$url = str_replace(" ", "+", $url);
 		
 		// Testing allow_url_fopen ON
@@ -85,8 +112,7 @@ class MPT_backoffice {
 		
 		if (!$res)
             return null;
-			
-	
+		
 		
 		$str = explode( 'imgurl', $res );
 		
@@ -145,13 +171,25 @@ class MPT_backoffice {
 	function MPT_menu() {
 		add_options_page( 'Magic Post Thumbnail Options', 'Magic Post Thumbnail', 'manage_options', 'mpt', array( &$this, 'MPT_options' ) );
 		add_action('admin_head', array( &$this, 'admin_register_head') );
-		register_setting('MPT-plugin-settings', 'MPT_plugin_settings');	
+		register_setting('MPT-plugin-settings', 'MPT_plugin_settings');
 	}
 	
+	
 	function admin_register_head() {
-		$siteurl = get_option('siteurl');
-		$url = $siteurl . '/wp-content/plugins/' . basename(dirname(__FILE__)) . '/css/admin-style.css';
-		echo "<link rel='stylesheet' type='text/css' href='$url' />\n";
+		
+		if ( !empty( $_POST['mpt'] ) || !empty( $_REQUEST['ids'] ) ) {
+			
+			$ids = esc_attr( $_GET['ids'] );
+			$ids = array_map( 'intval', explode( ',', trim( $ids, ',' ) ) );
+			$count = count( $ids );
+			$ids = json_encode( $ids );
+?>
+			<script type="text/javascript">
+				var url_generation = '<?php echo plugins_url( 'generate.php', __FILE__ ); ?>';
+				sendposts( <?php echo $ids; ?>, 1, <?php echo $count; ?>, url_generation );
+			</script>	
+<?php
+		}
 	}
 	
 	/* Display MPT Options */
@@ -164,7 +202,7 @@ class MPT_backoffice {
 		<div id="icon-upload" class="icon32"></div>
 		<div class="wrap">
 			<h2>Magic Post Thumbnail : <?php _e( 'Google Image Search Preferences', 'mpt' ); ?></h2>
-			<?php if( ini_get('allow_url_fopen') == 1 ) : ?>
+			<?php if( ini_get('allow_url_fopen') == 1 ) { ?>
 				<form method="post" action="options.php">
 					<?php $test = settings_fields( 'MPT-plugin-settings' ); ?>
 					<?php $options = get_option( 'MPT_plugin_settings' ); ?>
@@ -192,15 +230,15 @@ class MPT_backoffice {
 										__( 'Germany', 'mpt' ) => "de/m/search?hl=de",
 										__( 'Italia', 'mpt' ) => "it/m/search?hl=it",
 										__( 'Japan', 'mpt' ) => "co.jp/m/search?hl=ja",
-										__( 'Netherlands', 'mpt' ) => "nl/m/webhp?hl=nl",
-										__( 'Mexico', 'mpt' ) => "co.ma/m/webhp?hl=ar",
+										__( 'Netherlands', 'mpt' ) => "nl/m/search?hl=nl",
+										__( 'Mexico', 'mpt' ) => "co.ma/m/search?hl=ar",
 										__( 'Morocco', 'mpt' ) => "it/m/search?hl=it",
-										__( 'Peru', 'mpt' ) => "com.pe/m/webhp?hl=es",
-										__( 'South Africa', 'mpt' ) => "co.za/m/webhp?hl=en",
-										__( 'Spain', 'mpt' ) => "es/m/webhp?hl=es",
-										__( 'Swiss', 'mpt' ) => "ch/m/webhp?hl=de",
-										__( 'UK', 'mpt' ) => "co.uk/m/webhp?hl=en",
-										__( 'USA', 'mpt' ) => "com/m/webhp?hl=en"
+										__( 'Peru', 'mpt' ) => "com.pe/m/search?hl=es",
+										__( 'South Africa', 'mpt' ) => "co.za/m/search?hl=en",
+										__( 'Spain', 'mpt' ) => "es/m/search?hl=es",
+										__( 'Swiss', 'mpt' ) => "ch/m/search?hl=de",
+										__( 'UK', 'mpt' ) => "co.uk/m/search?hl=en",
+										__( 'USA', 'mpt' ) => "com/m/search?hl=en"
 									);
 									
 									foreach( $country_choose as $name_country => $code_country ) {
@@ -247,13 +285,26 @@ class MPT_backoffice {
 						<li><input type="submit" name="Save" value="<?php _e( 'Save Options', 'mpt' ); ?>" class="button-primary" id="submitbutton" /></li>
 					</ul>
 				</form>
-			<?php else : ?>
+				
+				
+				<?php
+    				if ( ! empty( $_POST['mpt'] ) || ! empty( $_REQUEST['ids'] ) ) {
+                        // Capability check
+				?>	
+					  <div id="ids" style="display:none;"><?php echo $_REQUEST['ids']; ?></div>
+					  <div id="hide-before-import" style="display:none">
+						  <div id="progressbar"></div>
+						  <div id="results" ></div>
+					  </div>
+              <?php
+                    }
+			} else { ?>
 				<div class="error fade">
 					<p>
 						<strong><?php _e( 'Sorry, your server require allow_url_fopen ON, please update your server before using this plugin', 'mpt' ); ?></strong>
 					</p>
 				</div>
-			<?php endif; ?>
+		<?php } ?>
 		</div>
 <?php
 	}
@@ -281,7 +332,6 @@ class MPT_backoffice {
 		}
 	}
 	
-	
 	/* Add Settings link to plugins */
 	function add_settings_link( $links, $file ) {
 		static $this_plugin;
@@ -296,9 +346,67 @@ class MPT_backoffice {
 	}
 	
 	
+	
+	/* Box on posts edit screens */
+	public function MPT_add_custom_box() {
+		
+		$id = get_the_ID();
+		
+		$post_type_availables = get_option( 'MPT_plugin_settings' );
+		$screens = $post_type_availables['choosed_post_type'];
+		
+		if( empty( $screens ) ) {
+			return false;
+		}
+		
+		foreach ($screens as $screen) {
+			add_meta_box(
+				'myplugin_sectionid',
+				'Magic Post Thumbnail',
+				array( &$this, 'MPT_inner_custom_box' ),
+				$screen,
+				'side'
+			);
+		}
+	}
+
+	/* Box MPT choice for posts */
+	function MPT_inner_custom_box( $post ) {
+		
+		wp_nonce_field( plugin_basename( __FILE__ ), 'mpt_noncename' );
+		
+		$value = get_post_meta( $post->ID, '_mpt_value_key', true );
+		$value = ( $value != '0' )? 'checked="checked"' : '' ;
+		echo '<label class="selectmpt"><input value="1" type="checkbox" name="mpt_check" '.esc_attr($value).'></label> ';
+		_e( 'Plugin enabled for this post', 'mpt' );
+	}
+
+	/* Save enable/disable choice for a saved post */
+	public function MPT_save_postdata( $post_id ) {
+
+		if ( 'page' == $_POST['post_type'] ) {
+			if ( ! current_user_can( 'edit_page', $post_id ) )
+				return;
+		} else {
+			if ( ! current_user_can( 'edit_post', $post_id ) )
+				return;
+		}
+
+		if ( ! isset( $_POST['mpt_noncename'] ) || ! wp_verify_nonce( $_POST['mpt_noncename'], plugin_basename( __FILE__ ) ) )
+			return;
+		
+		$post_ID = $_POST['post_ID'];
+		$mpt_enabled = sanitize_text_field( $_POST['mpt_check'] );
+		if( $mpt_enabled != 1 )
+		$mpt_enabled = 0;
+
+		add_post_meta($post_ID, '_mpt_value_key', $mpt_enabled, true) or
+		update_post_meta($post_ID, '_mpt_value_key', $mpt_enabled);
+	}
+	
 }
 
 if( is_admin() )
 	$launch_MPT = new MPT_backoffice();
-	
+
 ?>
