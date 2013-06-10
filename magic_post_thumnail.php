@@ -2,7 +2,7 @@
 /*
 Plugin Name: Magic Post Thumbnail
 Description: Automatically add a thumbnail for your posts. Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 1.3
+Version: 1.3.1
 Author: Alexandre Gaboriau
 Author URI: http://www.alex.re/
 
@@ -30,7 +30,7 @@ class MPT_backoffice {
 
     public function __construct() {
 	
-		add_action( 'edit_post', array( &$this, 'create_thumb' ) );
+		add_action( 'save_post', array( &$this, 'create_thumb' ) );
 		add_action( 'admin_menu', array( &$this, 'MPT_menu' ) );
 		
 		register_activation_hook( __FILE__, array( &$this, 'MPT_default_values' ) );
@@ -43,7 +43,7 @@ class MPT_backoffice {
 		
         add_filter( 'bulk_actions-edit-post', array( &$this, 'add_bulk_actions' ) );
 		add_filter( 'bulk_actions-edit-page', array( &$this, 'add_bulk_actions' ) );
-        add_action( 'admin_action_bulk_regenerate_thumbnails2', array( &$this, 'mpt_bulk_action_handler' ) ); // Top drowndown
+        add_action( 'admin_action_bulk_regenerate_thumbnails', array( &$this, 'mpt_bulk_action_handler' ) ); // Top drowndown
 		
 		add_action( 'add_meta_boxes', array( &$this, 'MPT_add_custom_box' ) );
 		add_action( 'save_post', array( &$this, 'MPT_save_postdata' ) );
@@ -67,7 +67,7 @@ class MPT_backoffice {
 ?>
         <script type="text/javascript">
             jQuery(document).ready(function($){
-                $('select[name^="action"] option:last-child').before('<option value="bulk_regenerate_thumbnails2"><?php echo esc_attr( __( 'Generate Magic Post thumbnail', 'mpt' ) ); ?></option>');
+                $('select[name^="action"] option:last-child').before('<option value="bulk_regenerate_thumbnails"><?php echo esc_attr( __( 'Generate Magic Post thumbnail', 'mpt' ) ); ?></option>');
             });
         </script>
 <?php
@@ -81,7 +81,6 @@ class MPT_backoffice {
 		
 		if( !current_user_can('upload_files') )
 			return false;
-			
 		
 		$post_type_availables = get_option( 'MPT_plugin_settings' );
 		$post_type_availables = $post_type_availables['choosed_post_type'];
@@ -116,6 +115,9 @@ class MPT_backoffice {
 		
 		
 		$str = explode( 'imgurl', $res );
+		
+		if ( !isset( $str[1] ) )
+			return null;
 		
 		/* Try with the first 10 images */
 		for( $a=1; $a<10; $a++ ) {
@@ -167,6 +169,7 @@ class MPT_backoffice {
 		$var =  wp_update_attachment_metadata( $attach_id, $attach_data );
 		
 		set_post_thumbnail( $id, $attach_id );
+		return 1;
     }
 	
 	function MPT_menu() {
