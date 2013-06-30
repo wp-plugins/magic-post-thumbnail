@@ -1,11 +1,11 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           1.3.1
+Version:           1.3.2
 Tags:              automatic, thumbnail, featured, image, google, generate, google image, magic, empty
 Author URI:        alex.re
 Author:            Alexandre Gaboriau
 Requires at least: 3.0
-Tested up to:      3.5.1
+Tested up to:      3.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,3 +65,6 @@ Settings allow you to configure some settings:
 	* Enable mass generation with servers that block some kind of ajax calls.
 	* Add error message when there is no image on Google, and don't create a blank image.
 	* Action 'edit_post' changed to 'save_post' for compatibility when publishing a new post
+	
+= 1.3.2 =
+	* Add option "Generate Magic Post Thumbnail" for Custom Post Type

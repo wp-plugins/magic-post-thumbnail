@@ -2,7 +2,7 @@
 /*
 Plugin Name: Magic Post Thumbnail
 Description: Automatically add a thumbnail for your posts. Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 1.3.1
+Version: 1.3.2
 Author: Alexandre Gaboriau
 Author URI: http://www.alex.re/
 
@@ -40,6 +40,7 @@ class MPT_backoffice {
 		load_plugin_textdomain( 'mpt', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 		
         add_action('admin_enqueue_scripts', array( &$this, 'apt_admin_enqueues' ) ); // Plugin hook for adding CSS and JS files required for this plugin
+		
 		
         add_filter( 'bulk_actions-edit-post', array( &$this, 'add_bulk_actions' ) );
 		add_filter( 'bulk_actions-edit-page', array( &$this, 'add_bulk_actions' ) );
@@ -176,6 +177,18 @@ class MPT_backoffice {
 		add_options_page( 'Magic Post Thumbnail Options', 'Magic Post Thumbnail', 'manage_options', 'mpt', array( &$this, 'MPT_options' ) );
 		add_action('admin_head', array( &$this, 'admin_register_head') );
 		register_setting('MPT-plugin-settings', 'MPT_plugin_settings');
+		
+		/* Generate options on Custom post type */
+		$post_type_availables = get_option( 'MPT_plugin_settings' );
+		$screens = $post_type_availables['choosed_post_type'];
+		
+		if( empty( $screens ) ) {
+			return false;
+		}
+		
+		foreach ($screens as $screen) {
+			add_filter( 'bulk_actions-edit-'. $screen, array( &$this, 'add_bulk_actions' ) );
+		}
 	}
 	
 	
