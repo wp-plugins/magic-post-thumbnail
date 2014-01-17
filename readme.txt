@@ -70,5 +70,5 @@ Settings allow you to configure some settings:
 = 1.3.2 =
 	* Add option "Generate Magic Post Thumbnail" for Custom Post Type
 	
-= 1.3.2 =
+= 2.0 =
 	* Plugin doesn't support anymore Google Image. Replace by free to use Pixabay.com
