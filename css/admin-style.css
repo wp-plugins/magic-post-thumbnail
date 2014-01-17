@@ -1,0 +1,24 @@
+.list-MPT label {
+	width: 300px;
+	display: inline-block;
+}
+
+.legend_post_type {
+	width: 300px;
+}
+.label_post_type {
+	margin-left: 300px;
+	margin-top: -57px;
+}
+#results {
+	margin-top: 25px;
+	color: red;
+	font-weight: bold;
+	width: 100%;
+	padding: 6px 0 5px 10px;
+	max-height: 200px;
+	overflow-y: scroll;
+}
+.ui-progressbar .ui-progressbar-value {
+	background-image: url( '../img/pbar-ani.gif' );
+}
