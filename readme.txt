@@ -1,24 +1,25 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           1.3.2
-Tags:              automatic, thumbnail, featured, image, google, generate, google image, magic, empty
+Version:           2.0
+Tags:              automatic, thumbnail, featured, image, generate, google image, magic, empty, Pixabay
 Author URI:        alex.re
 Author:            Alexandre Gaboriau
 Requires at least: 3.0
-Tested up to:      3.5.2
+Tested up to:      3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically add a thumbnail for your posts. Retrieve first image from Google (based on post title) and add it as featured image
+Automatically add a thumbnail for your posts. Retrieve first image from images database (Pixabay.com) and add it as featured image
 
 == Description ==
 Automatically add a thumbnail for your posts. 
-Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
+Retrieve first image from Pixabay Images based on post title and add it as your featured thumbnail when you publish/update it.
 Settings allow you to configure some settings:
 
 * Some options : Safe Search, Country Search, Filter only images royalty-free.
 * Which Post type (Posts and Pages included) it is enabled
 * V1.3 can now mass generate thumbnails !
+* V2 replace Pixabay.com images database instead Google Images
 
 == Translations ==
 * English
@@ -68,3 +69,6 @@ Settings allow you to configure some settings:
 	
 = 1.3.2 =
 	* Add option "Generate Magic Post Thumbnail" for Custom Post Type
+	
+= 1.3.2 =
+	* Plugin doesn't support anymore Google Image. Replace by free to use Pixabay.com

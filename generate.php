@@ -20,7 +20,7 @@
 	} elseif( !has_post_thumbnail( $id ) && $id != 0 ) {
 		$MPT_return = $launch_MPT->create_thumb( $id, '0' );
 		if( $MPT_return == null )
-			$msg = __( 'No image on Google for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a>';
+			$msg = __( 'No image for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a>';
 		else
 			$msg = __( 'Successful image creation for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a>';
 	} else {
