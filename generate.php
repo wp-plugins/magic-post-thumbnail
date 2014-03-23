@@ -22,7 +22,7 @@
 		if( $MPT_return == null )
 			$msg = __( 'No image for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a>';
 		else
-			$msg = __( 'Successful image creation for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a>';
+			$msg = '<span class=\"successful\">'. __( 'Successful image creation for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a></span>';
 	} else {
 		$msg = __( 'Error while creating image', 'mpt' );
 	}
@@ -37,7 +37,7 @@
 			  value: percent
 		  });
 		  if( percent == 100 ) {
-			jQuery("#results").append("<br/><?php _e( 'Successful generation', 'mpt' ); ?> !!");
+			jQuery("#results").append("<br/><span class=\"successful\"><?php _e( 'Successful generation', 'mpt' ); ?> !!</a>");
 		  }
 		 
 	});

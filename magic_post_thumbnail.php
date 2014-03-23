@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Magic Post Thumbnail
-Description: Automatically add a thumbnail for your posts. Retrieve first image from the database <a href="http://pixabay.com">Pixabay</a> based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 2.0
+Description: Automatically add a thumbnail for your posts. Retrieve first image from the database Google Image based on post title and add it as your featured thumbnail when you publish/update it.
+Version: 2.1
 Author: Alexandre Gaboriau
-Author URI: http://www.alex.re/
+Author URI: http://www.alexandregaboriau.fr/
 
 
-Copyright 2013 Alexandre Gaboriau (contact@alexandregaboriau.fr)
+Copyright 2014 Alexandre Gaboriau (contact@alexandregaboriau.fr)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -78,7 +78,7 @@ class MPT_backoffice {
 	/* Retrieve Image from Database, save it into Media Library, and attach it to the post as featured image */
     public function create_thumb( $id, $check_value_enable = 1 ) {
 		
-		error_reporting(0);
+		//error_reporting(0);
 		
 		if( !current_user_can('upload_files') )
 			return false;
@@ -92,18 +92,52 @@ class MPT_backoffice {
 		if( !in_array( get_post_type($id), $post_type_availables ) || has_post_thumbnail( $id ) )
 			return false;
 		
-		$search = get_the_title( $id );
-		
-		$search = urlencode( $search );
 		$options = get_option( 'MPT_plugin_settings' );
 		$country =( !empty( $options['search_country']) )? $options['search_country'] : 'en' ;
+		$search = get_the_title( $id );
 		
-		$return_results = wp_remote_retrieve_body( wp_remote_get( "http://pixabay.com/api/?username=magicpostthumbnail&lang=$country&key=f7325e83e7c8a2bb9336&search_term=$search&image_type=photo" ) );
-		$url_results = json_decode($return_results, true);
-		if( empty( $url_results['hits'] ) )
+		
+		
+		/* Try Curl or allow_url_fopen */
+		if( function_exists('curl_version') ) {
+			$curl = true;
+		}
+		elseif( ini_get('allow_url_fopen') ) {
+			$allow_url_fopen = true;
+		}
+		else{
 			return false;
+		}
+		
+		
+		/* Try for first 5 images */
+		for( $start=0; $start<5; $start++ ) {
+			$url = 'http://ajax.googleapis.com/ajax/services/search/images?start='.$start.'&hl='.$country.'&rsz=1&v=1.0&q='.urlencode( $search );
 			
-		$url_results = $url_results['hits'][0]['webformatURL'];
+			if( $curl ) {
+				$curl = curl_init();
+				curl_setopt($curl, CURLOPT_URL, $url);
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+				$data = curl_exec($curl);
+				curl_close($curl);
+				$result = json_decode($data, true);
+			} 
+			elseif( $allow_url_fopen ) {
+				$res = @file_get_contents( $url );
+				$result = json_decode($res, true);
+			}
+			else {}
+			
+			if( empty($result['responseData']['results']) )
+				return false;
+			
+			if( $result['responseStatus'] == '200' && $result['responseData']['results'][0]['unescapedUrl'] ) {
+				$url_results = $result['responseData']['results'][0]['unescapedUrl'];
+				break;
+			} else {
+				continue;
+			}
+		}
 		
 		
 		$path_parts = pathinfo($url_results);
@@ -119,27 +153,28 @@ class MPT_backoffice {
 		
 		$file_upload = file_put_contents( $folder, $file_media );
 		
-		$size = getimagesize( $wp_upload_dir['url'] .'/'. _wp_relative_upload_path( $filename ) );
+		$size = getimagesize( $wp_upload_dir['url'] .'/'. urlencode( $filename ) );
 		
 		if( $size[0] == false ) {
-			unlink( $wp_upload_dir['path'] .'/'. _wp_relative_upload_path( $filename ) );
+			unlink( $wp_upload_dir['path'] .'/'. urlencode( $filename ) );
 			continue;
 		}
 		
 		
 		$wp_filetype = wp_check_filetype( basename( $filename ), null );
 		
+		
 		$wp_upload_dir = wp_upload_dir();
 		$attachment = array(
-			'guid' => $wp_upload_dir['url'] .'/'. _wp_relative_upload_path( $filename ), 
+			'guid' => $wp_upload_dir['url'] .'/'. urlencode( $filename ), 
 			'post_mime_type' => $wp_filetype['type'],
-			'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename)),
+			'post_title' => $search,
 			'post_content' => '',
 			'post_status' => 'inherit'
 		);
-		$attach_id = wp_insert_attachment( $attachment, $wp_upload_dir['url'] .'/'. _wp_relative_upload_path( $filename ) );
+		$attach_id = wp_insert_attachment( $attachment, $wp_upload_dir['path'] .'/'. urlencode( $filename ) );
 		require_once( ABSPATH . 'wp-admin/includes/image.php' );
-		$attach_data = wp_generate_attachment_metadata( $attach_id, $wp_upload_dir['path'] .'/'. $filename );
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $wp_upload_dir['path'] .'/'.  urlencode( $filename ) );
 		$var =  wp_update_attachment_metadata( $attach_id, $attach_data );
 		
 		set_post_thumbnail( $id, $attach_id );
@@ -192,20 +227,13 @@ class MPT_backoffice {
 		<div id="icon-upload" class="icon32"></div>
 		<div class="wrap">
 			<h2>Magic Post Thumbnail : <?php _e( 'Search Preferences', 'mpt' ); ?></h2>
-			<?php if( ini_get('allow_url_fopen') == 1 ) { ?>
+			<?php if( ini_get('allow_url_fopen') == 1 || function_exists('curl_version') ) { ?>
 			
 			
 				<form method="post" action="options.php">
 					<?php $test = settings_fields( 'MPT-plugin-settings' ); ?>
 					<?php $options = get_option( 'MPT_plugin_settings' ); ?>
 					<ul class="list-MPT">
-						<li>
-							<label><?php _e( 'Choose your database', 'mpt' ); ?> : </label>
-							<select name="MPT_plugin_settings[database]" >	
-								<option selected="selected" value="pixabay">Pixabay.com</option>
-							</select>
-							<i><?php _e( 'Only Pixabay is available now, but others databases will be available with next versions', 'mpt' ); ?></i>
-						</li>
 						<li>
 							<label><?php _e( 'Choose your language', 'mpt' ); ?> : </label>
 							<select name="MPT_plugin_settings[search_country]" >
@@ -382,6 +410,8 @@ class MPT_backoffice {
 		add_post_meta($post_ID, '_mpt_value_key', $mpt_enabled, true) or
 		update_post_meta($post_ID, '_mpt_value_key', $mpt_enabled);
 	}
+	
+	
 	
 }
 

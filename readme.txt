@@ -1,25 +1,26 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           2.0
-Tags:              automatic, thumbnail, featured, image, generate, google image, magic, empty, Pixabay
+Version:           2.1
+Tags:              automatic, thumbnail, featured, image, generate, google image, scraping, google api, google, magic, empty 
 Author URI:        alex.re
 Author:            Alexandre Gaboriau
+Donate link:       http://www.alexandregaboriau.fr/donate.html
 Requires at least: 3.0
-Tested up to:      3.8
+Tested up to:      3.8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically add a thumbnail for your posts. Retrieve first image from images database (Pixabay.com) and add it as featured image
+Automatically add a thumbnail for your posts. Retrieve first image from Google Image and add it as featured image
 
 == Description ==
 Automatically add a thumbnail for your posts. 
-Retrieve first image from Pixabay Images based on post title and add it as your featured thumbnail when you publish/update it.
+Retrieve first image from Google Images based on post title and add it as your featured thumbnail when you publish/update it.
 Settings allow you to configure some settings:
 
-* Some options : Safe Search, Country Search, Filter only images royalty-free.
 * Which Post type (Posts and Pages included) it is enabled
 * V1.3 can now mass generate thumbnails !
-* V2 replace Pixabay.com images database instead Google Images
+* V2.1 use now Google API instead web scraping
+
 
 == Translations ==
 * English
@@ -33,7 +34,7 @@ Settings allow you to configure some settings:
 
 == Installation ==
 = General Requirements =
-* PHP: = allow_url_fopen = On
+* PHP: CURL enabled **AND/OR** allow_url_fopen = On
 1. Activate the plugin
 2. Go to Settings > Magic Post Thumbnail
 3. Configure your settings and which post type you want to enable it
@@ -72,3 +73,8 @@ Settings allow you to configure some settings:
 	
 = 2.0 =
 	* Plugin doesn't support anymore Google Image. Replace by free to use Pixabay.com
+	
+= 2.1 =
+	* Solution has been found to get back Google Image with Google API
+	* Generation phrases have changed color
+	* Work with now with CURL or allow_url_fopen

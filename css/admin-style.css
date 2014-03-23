@@ -19,6 +19,9 @@
 	max-height: 200px;
 	overflow-y: scroll;
 }
+#results .successful {
+	color: green;
+}
 .ui-progressbar .ui-progressbar-value {
 	background-image: url( '../img/pbar-ani.gif' );
 }
