@@ -1,7 +1,7 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
 Version:           2.1
-Tags:              automatic, thumbnail, featured, image, generate, google image, scraping, google api, google, magic, empty 
+Tags:              automatic, thumbnail, featured, image, generate, google image, scraping, google api, google, magic 
 Author URI:        alex.re
 Author:            Alexandre Gaboriau
 Donate link:       http://www.alexandregaboriau.fr/donate.html
