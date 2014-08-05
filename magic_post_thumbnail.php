@@ -1,10 +1,13 @@
 <?php
 /*
 Plugin Name: Magic Post Thumbnail
+Plugin URI: http://wordpress.org/plugins/magic-post-thumbnail/
 Description: Automatically add a thumbnail for your posts. Retrieve first image from the database Google Image based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 2.1
+Version: 2.1.1
 Author: Alexandre Gaboriau
 Author URI: http://www.alexandregaboriau.fr/
+Text Domain: 'mpt'
+Domain Path: /languages
 
 
 Copyright 2014 Alexandre Gaboriau (contact@alexandregaboriau.fr)
@@ -78,7 +81,7 @@ class MPT_backoffice {
 	/* Retrieve Image from Database, save it into Media Library, and attach it to the post as featured image */
     public function create_thumb( $id, $check_value_enable = 1 ) {
 		
-		//error_reporting(0);
+		error_reporting(0);
 		
 		if( !current_user_can('upload_files') )
 			return false;
@@ -147,38 +150,44 @@ class MPT_backoffice {
 		$folder = $wp_upload_dir['path'] .'/'. $filename;
 		
 		$file_media = @file_get_contents( $url_results );
-		if (!$file_media)
-			continue;
 		
-		
-		$file_upload = file_put_contents( $folder, $file_media );
-		
-		$size = getimagesize( $wp_upload_dir['url'] .'/'. urlencode( $filename ) );
-		
-		if( $size[0] == false ) {
-			unlink( $wp_upload_dir['path'] .'/'. urlencode( $filename ) );
-			continue;
+		$size_external_img = getimagesize( $file_media );
+		if( $size_external_img[0] == false ) {
+			$curl = curl_init();
+			curl_setopt($curl, CURLOPT_URL, $url_results);
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+			$file_media = curl_exec($curl);
+			curl_close($curl);
 		}
 		
+		if ($file_media) {
 		
-		$wp_filetype = wp_check_filetype( basename( $filename ), null );
-		
-		
-		$wp_upload_dir = wp_upload_dir();
-		$attachment = array(
-			'guid' => $wp_upload_dir['url'] .'/'. urlencode( $filename ), 
-			'post_mime_type' => $wp_filetype['type'],
-			'post_title' => $search,
-			'post_content' => '',
-			'post_status' => 'inherit'
-		);
-		$attach_id = wp_insert_attachment( $attachment, $wp_upload_dir['path'] .'/'. urlencode( $filename ) );
-		require_once( ABSPATH . 'wp-admin/includes/image.php' );
-		$attach_data = wp_generate_attachment_metadata( $attach_id, $wp_upload_dir['path'] .'/'.  urlencode( $filename ) );
-		$var =  wp_update_attachment_metadata( $attach_id, $attach_data );
-		
-		set_post_thumbnail( $id, $attach_id );
-		return 1;
+			$file_upload = file_put_contents( $folder, $file_media );
+			
+			$size = getimagesize( $wp_upload_dir['url'] .'/'. urlencode( $filename ) );
+			
+			if( $size[0] == false ) {
+				unlink( $wp_upload_dir['path'] .'/'. urlencode( $filename ) );
+			} else {
+				$wp_filetype = wp_check_filetype( basename( $filename ), null );
+				
+				$wp_upload_dir = wp_upload_dir();
+				$attachment = array(
+					'guid' => $wp_upload_dir['url'] .'/'. urlencode( $filename ), 
+					'post_mime_type' => $wp_filetype['type'],
+					'post_title' => $search,
+					'post_content' => '',
+					'post_status' => 'inherit'
+				);
+				$attach_id = wp_insert_attachment( $attachment, $wp_upload_dir['path'] .'/'. urlencode( $filename ) );
+				require_once( ABSPATH . 'wp-admin/includes/image.php' );
+				$attach_data = wp_generate_attachment_metadata( $attach_id, $wp_upload_dir['path'] .'/'.  urlencode( $filename ) );
+				$var =  wp_update_attachment_metadata( $attach_id, $attach_data );
+				
+				set_post_thumbnail( $id, $attach_id );
+				return 1;
+			}
+		}
     }
 	
 	function MPT_menu() {
@@ -223,6 +232,12 @@ class MPT_backoffice {
 		if ( !current_user_can( 'manage_options' ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 		}
+		
+		if( !function_exists('curl_version') && !ini_get('allow_url_fopen') ) {
+			wp_die( __( 'Sorry you have to enable CURL or allow_url_fopen on your PHP configuration.' ) );
+		}
+		
+		
 ?>	
 		<div id="icon-upload" class="icon32"></div>
 		<div class="wrap">
@@ -405,9 +420,8 @@ class MPT_backoffice {
 		$post_ID = $_POST['post_ID'];
 		$mpt_enabled = sanitize_text_field( $_POST['mpt_check'] );
 		if( $mpt_enabled != 1 )
-		$mpt_enabled = 0;
-
-		add_post_meta($post_ID, '_mpt_value_key', $mpt_enabled, true) or
+			$mpt_enabled = 0;
+		
 		update_post_meta($post_ID, '_mpt_value_key', $mpt_enabled);
 	}
 	
