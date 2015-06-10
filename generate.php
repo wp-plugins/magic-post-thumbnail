@@ -1,10 +1,14 @@
 <?php
+	
+	if( !isset( $_POST['ids'] ) )
+		return false;
+	
 	require_once('../../../wp-blog-header.php');
 	
-	// For servers that block ajax calls
+	// For servers which block ajax calls
 	header('HTTP/1.1 200 OK');
 	
-	$post_ids = array_filter( $_POST['ids'], 'ctype_digit' );
+	$post_ids = array_map( 'absint', $_POST['ids'] );
 	$count = count( $post_ids );
 
 	foreach ( $post_ids as $key => $val )
@@ -18,7 +22,7 @@
 	if( has_post_thumbnail( $id ) ) {
 		$msg = __( 'Thumbnail\'s image of ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" >'.get_the_title( $id ).'</a> '.__( ' already exist', 'mpt' );
 	} elseif( !has_post_thumbnail( $id ) && $id != 0 ) {
-		$MPT_return = $launch_MPT->create_thumb( $id, '0' );
+		$MPT_return = $launch_MPT->MPT_create_thumb( $id, '0', '0' );
 		if( $MPT_return == null )
 			$msg = __( 'No image for ', 'mpt' ).'<a href=\"'.get_edit_post_link( $id ).'#postimagediv\" target=\"_blank\" > '.get_the_title( $id ).'</a>';
 		else

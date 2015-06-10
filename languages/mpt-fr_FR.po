@@ -4,175 +4,633 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Magic Post Thumbnail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-17 18:21+0100\n"
-"PO-Revision-Date: 2014-01-17 18:26+0100\n"
+"POT-Creation-Date: 2015-06-10 13:49+0100\n"
+"PO-Revision-Date: 2015-06-10 13:51+0100\n"
 "Last-Translator: \n"
-"Language-Team:  <g.alex17@gmail.com>\n"
+"Language-Team: g.alex17@gmail.com\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.8.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: generate.php:19
+#: generate.php:23
 msgid "Thumbnail's image of "
 msgstr "L'image à la une de "
 
-#: generate.php:19
+#: generate.php:23
 msgid " already exist"
 msgstr "existe déjà"
 
-#: generate.php:23
+#: generate.php:27
 msgid "No image for "
 msgstr "Pas d'image pour"
 
-#: generate.php:25
+#: generate.php:29
 msgid "Successful image creation for "
 msgstr "Création de l'image réussie pour "
 
-#: generate.php:27
+#: generate.php:31
 msgid "Error while creating image"
 msgstr "Erreur lors de la création de l'image"
 
-#: generate.php:40
+#: generate.php:44
 msgid "Successful generation"
 msgstr "Génération réussie"
 
-#: magic_post_thumbnail.php:71
+#: magic_post_thumbnail.php:75
 msgid "Generate Magic Post thumbnail"
 msgstr ""
 
-#: magic_post_thumbnail.php:189
+#: magic_post_thumbnail.php:249
 msgid "You do not have sufficient permissions to access this page."
 msgstr "Vous n'avez pas d'autorisations suffisantes pour accéder à cette page."
 
-#: magic_post_thumbnail.php:194
+#: magic_post_thumbnail.php:256
 msgid "Search Preferences"
 msgstr "Préférences de recherche"
 
-#: magic_post_thumbnail.php:203
-msgid "Choose your database"
-msgstr "Choisissez votre base d'images"
+#: magic_post_thumbnail.php:268
+msgid "Choose the language"
+msgstr "Choisissez la langue"
 
-#: magic_post_thumbnail.php:207
-msgid ""
-"Only Pixabay is available now, but others databases will be available with "
-"next versions"
-msgstr ""
-"Pixabay est le seul disponible maintenant, d'autres bases d'images seront "
-"dispo dans les prochaines versions"
+#: magic_post_thumbnail.php:275
+msgid "Afrikaans"
+msgstr "Afrikaans"
 
-#: magic_post_thumbnail.php:210
-msgid "Choose your language"
-msgstr "Choisissez votre langue"
+#: magic_post_thumbnail.php:276
+msgid "Albanian"
+msgstr "Albanais"
 
-#: magic_post_thumbnail.php:215
-msgid "English"
-msgstr "Anglais"
+#: magic_post_thumbnail.php:277
+msgid "Amharic"
+msgstr "Amharique"
 
-#: magic_post_thumbnail.php:216
-msgid "Indonesian"
-msgstr "Indonesien"
+#: magic_post_thumbnail.php:278
+msgid "Arabic"
+msgstr "Arabe"
 
-#: magic_post_thumbnail.php:217
+#: magic_post_thumbnail.php:279
+msgid "Azerbaijani"
+msgstr "Azerbaïdjanais"
+
+#: magic_post_thumbnail.php:280
+msgid "Basque"
+msgstr "Basque"
+
+#: magic_post_thumbnail.php:281
+msgid "Belarusian"
+msgstr "Biélorusse"
+
+#: magic_post_thumbnail.php:282
+msgid "Bengali"
+msgstr "Bengali"
+
+#: magic_post_thumbnail.php:283
+msgid "Bihari"
+msgstr "Bihari"
+
+#: magic_post_thumbnail.php:284
+msgid "Bosnian"
+msgstr "Bosnie"
+
+#: magic_post_thumbnail.php:285
+msgid "Bulgarian"
+msgstr "Bulgare"
+
+#: magic_post_thumbnail.php:286
+msgid "Catalan"
+msgstr "Catalan"
+
+#: magic_post_thumbnail.php:287
+msgid "Chinese (Simplified)"
+msgstr "Chinois (Simplifié)"
+
+#: magic_post_thumbnail.php:288
+msgid "Chinese (Traditional)"
+msgstr "Chinois (traditionnel)"
+
+#: magic_post_thumbnail.php:289
+msgid "Croatian"
+msgstr "Croate"
+
+#: magic_post_thumbnail.php:290
 msgid "Czech"
 msgstr "Tchèque"
 
-#: magic_post_thumbnail.php:218
-msgid "German"
-msgstr "Allemand"
+#: magic_post_thumbnail.php:291
+msgid "Danish"
+msgstr "Danois"
 
-#: magic_post_thumbnail.php:219
-msgid "Spanish"
-msgstr "Espagnol"
-
-#: magic_post_thumbnail.php:220
-msgid "French"
-msgstr "Francais"
-
-#: magic_post_thumbnail.php:221
-msgid "Italian"
-msgstr "Italien"
-
-#: magic_post_thumbnail.php:222
+#: magic_post_thumbnail.php:292
 msgid "Dutch"
 msgstr "Néerlandais"
 
-#: magic_post_thumbnail.php:223
-msgid "Norwegian"
-msgstr "Norvégien"
+#: magic_post_thumbnail.php:293
+msgid "English"
+msgstr "Anglais"
 
-#: magic_post_thumbnail.php:224
-msgid "Hungarian"
-msgstr "Hongroise"
+#: magic_post_thumbnail.php:294
+msgid "Esperanto"
+msgstr "Espéranto"
 
-#: magic_post_thumbnail.php:225
-msgid "Russian"
-msgstr "Russe"
+#: magic_post_thumbnail.php:295
+msgid "Estonian"
+msgstr "Estonien"
 
-#: magic_post_thumbnail.php:226
-msgid "Polish"
-msgstr "Polonais"
+#: magic_post_thumbnail.php:296
+msgid "Faroese"
+msgstr "Féroïen"
 
-#: magic_post_thumbnail.php:227
-msgid "Portuguese"
-msgstr "Portugais"
-
-#: magic_post_thumbnail.php:228
-msgid "Romanian"
-msgstr "Roumain"
-
-#: magic_post_thumbnail.php:229
+#: magic_post_thumbnail.php:297
 msgid "Finnish"
 msgstr "Finlandais"
 
-#: magic_post_thumbnail.php:230
-msgid "Swedish"
-msgstr "Suédois"
+#: magic_post_thumbnail.php:298
+msgid "French"
+msgstr "Francais"
 
-#: magic_post_thumbnail.php:231
-msgid "Turkish"
-msgstr "Turc"
+#: magic_post_thumbnail.php:299
+msgid "Frisian"
+msgstr "Frison"
 
-#: magic_post_thumbnail.php:232
+#: magic_post_thumbnail.php:300
+msgid "Galician"
+msgstr "Galicienne"
+
+#: magic_post_thumbnail.php:301
+msgid "Georgian"
+msgstr "Géorgien"
+
+#: magic_post_thumbnail.php:302
+msgid "German"
+msgstr "Allemand"
+
+#: magic_post_thumbnail.php:303
+msgid "Greek"
+msgstr "Grecque"
+
+#: magic_post_thumbnail.php:304
+msgid "Gujarati"
+msgstr "Gujarati"
+
+#: magic_post_thumbnail.php:305
+msgid "Hebrew"
+msgstr "Hébreu"
+
+#: magic_post_thumbnail.php:306
+msgid "Hindi"
+msgstr "Hindi"
+
+#: magic_post_thumbnail.php:307
+msgid "Hungarian"
+msgstr "Hongroise"
+
+#: magic_post_thumbnail.php:308
+msgid "Icelandic"
+msgstr "Islandais"
+
+#: magic_post_thumbnail.php:309
+msgid "Indonesian"
+msgstr "Indonesien"
+
+#: magic_post_thumbnail.php:310
+msgid "Interlingua"
+msgstr "Interlingua"
+
+#: magic_post_thumbnail.php:311
+msgid "Irish"
+msgstr "Irlandais"
+
+#: magic_post_thumbnail.php:312
+msgid "Italian"
+msgstr "Italien"
+
+#: magic_post_thumbnail.php:313
 msgid "Japanese"
 msgstr "Japonais"
 
-#: magic_post_thumbnail.php:233
+#: magic_post_thumbnail.php:314
+msgid "Javanese"
+msgstr "Javanais"
+
+#: magic_post_thumbnail.php:315
+msgid "Kannada"
+msgstr "Kannada"
+
+#: magic_post_thumbnail.php:316
 msgid "Korean"
 msgstr "Coréen"
 
-#: magic_post_thumbnail.php:234
-msgid "Chinese"
-msgstr "Chinois"
+#: magic_post_thumbnail.php:317
+msgid "Latin"
+msgstr "Latin"
 
-#: magic_post_thumbnail.php:246
+#: magic_post_thumbnail.php:318
+msgid "Latvian"
+msgstr "Letton"
+
+#: magic_post_thumbnail.php:319
+msgid "Lithuanian"
+msgstr "Lituanien"
+
+#: magic_post_thumbnail.php:320
+msgid "Macedonian"
+msgstr "Macédonien"
+
+#: magic_post_thumbnail.php:321
+msgid "Malay"
+msgstr "Malais"
+
+#: magic_post_thumbnail.php:322
+msgid "Malayam"
+msgstr "Malayam"
+
+#: magic_post_thumbnail.php:323
+msgid "Maltese"
+msgstr "Maltais"
+
+#: magic_post_thumbnail.php:324
+msgid "Marathi"
+msgstr "Marathi"
+
+#: magic_post_thumbnail.php:325
+msgid "Nepali"
+msgstr "Népalais"
+
+#: magic_post_thumbnail.php:326
+msgid "Norwegian"
+msgstr "Norvégien"
+
+#: magic_post_thumbnail.php:327
+msgid "Norwegian (Nynorsk)"
+msgstr "Norvégien (Nynorsk)"
+
+#: magic_post_thumbnail.php:328
+msgid "Occitan"
+msgstr "Occitan"
+
+#: magic_post_thumbnail.php:329
+msgid "Persian"
+msgstr "Persan"
+
+#: magic_post_thumbnail.php:330
+msgid "Polish"
+msgstr "Polonais"
+
+#: magic_post_thumbnail.php:331
+msgid "Portuguese (Brazil)"
+msgstr "Portugais (Brésil)"
+
+#: magic_post_thumbnail.php:332
+msgid "Portuguese (Portugal)"
+msgstr "Portugais (Portugal)"
+
+#: magic_post_thumbnail.php:333
+msgid "Punjabi"
+msgstr "Punjabi"
+
+#: magic_post_thumbnail.php:334
+msgid "Romanian"
+msgstr "Roumain"
+
+#: magic_post_thumbnail.php:335
+msgid "Russian"
+msgstr "Russe"
+
+#: magic_post_thumbnail.php:336
+msgid "Scots Gaelic"
+msgstr "Gaélique écossais"
+
+#: magic_post_thumbnail.php:337
+msgid "Serbian"
+msgstr "Serbe"
+
+#: magic_post_thumbnail.php:338
+msgid "Sinhalese"
+msgstr "Cinghalais"
+
+#: magic_post_thumbnail.php:339
+msgid "Slovak"
+msgstr "Slovaque"
+
+#: magic_post_thumbnail.php:340
+msgid "Slovenian"
+msgstr "Slovène"
+
+#: magic_post_thumbnail.php:341
+msgid "Spanish"
+msgstr "Espagnol"
+
+#: magic_post_thumbnail.php:342
+msgid "Sudanese"
+msgstr "Soudanais"
+
+#: magic_post_thumbnail.php:343
+msgid "Swahili"
+msgstr "Swahili"
+
+#: magic_post_thumbnail.php:344
+msgid "Swedish"
+msgstr "Suédois"
+
+#: magic_post_thumbnail.php:345
+msgid "Tagalog"
+msgstr "Tagalog"
+
+#: magic_post_thumbnail.php:346
+msgid "Tamil"
+msgstr "Tamil"
+
+#: magic_post_thumbnail.php:347
+msgid "Telugu"
+msgstr "Telugu"
+
+#: magic_post_thumbnail.php:348
+msgid "Thai"
+msgstr "Thaïlandais"
+
+#: magic_post_thumbnail.php:349
+msgid "Tigrinya"
+msgstr "Tigrinya"
+
+#: magic_post_thumbnail.php:350
+msgid "Turkish"
+msgstr "Turc"
+
+#: magic_post_thumbnail.php:351
+msgid "Ukrainian"
+msgstr "Ukrainien"
+
+#: magic_post_thumbnail.php:352
+msgid "Urdu"
+msgstr "Urdu"
+
+#: magic_post_thumbnail.php:353
+msgid "Uzbek"
+msgstr "Ouzbek"
+
+#: magic_post_thumbnail.php:354
+msgid "Vietnamese"
+msgstr "Vietnamien"
+
+#: magic_post_thumbnail.php:355
+msgid "Welsh"
+msgstr "Gallois"
+
+#: magic_post_thumbnail.php:356
+msgid "Xhosa"
+msgstr "Xhosa"
+
+#: magic_post_thumbnail.php:357
+msgid "Zulu"
+msgstr "Zoulou"
+
+#: magic_post_thumbnail.php:372
 msgid "Relevant post type"
 msgstr "Type de contenus concernés"
 
-#: magic_post_thumbnail.php:266
+#: magic_post_thumbnail.php:393
+msgid "Specified color predominantly"
+msgstr "Couleur principale"
+
+#: magic_post_thumbnail.php:401 magic_post_thumbnail.php:441
+#: magic_post_thumbnail.php:501 magic_post_thumbnail.php:531
+msgid "-- Default --"
+msgstr "- Par défaut -"
+
+#: magic_post_thumbnail.php:402
+msgid "Black"
+msgstr "Noir"
+
+#: magic_post_thumbnail.php:403
+msgid "Blue"
+msgstr "Bleu"
+
+#: magic_post_thumbnail.php:404
+msgid "Brown"
+msgstr "Marron"
+
+#: magic_post_thumbnail.php:405
+msgid "Gray"
+msgstr "Gris"
+
+#: magic_post_thumbnail.php:406
+msgid "Green"
+msgstr "Vert"
+
+#: magic_post_thumbnail.php:407
+msgid "Orange"
+msgstr "Orange"
+
+#: magic_post_thumbnail.php:408
+msgid "Pink"
+msgstr "Rose"
+
+#: magic_post_thumbnail.php:409
+msgid "Purple"
+msgstr "Violet"
+
+#: magic_post_thumbnail.php:410
+msgid "Red"
+msgstr "Rouge"
+
+#: magic_post_thumbnail.php:411
+msgid "Teal"
+msgstr "Bleu-vert"
+
+#: magic_post_thumbnail.php:412
+msgid "White"
+msgstr "Blanc"
+
+#: magic_post_thumbnail.php:413
+msgid "Yellow"
+msgstr "Jaune"
+
+#: magic_post_thumbnail.php:425
+msgid "Experimental"
+msgstr ""
+
+#: magic_post_thumbnail.php:426
+msgid ""
+"Restricts results to images that contain a specified color predominantly"
+msgstr ""
+"Limite les résultats aux images qui contiennent une couleur prédominante"
+
+#: magic_post_thumbnail.php:433
+msgid "Filetype"
+msgstr "Type de fichier"
+
+#: magic_post_thumbnail.php:442
+msgid "jpg"
+msgstr ""
+
+#: magic_post_thumbnail.php:443
+msgid "png"
+msgstr ""
+
+#: magic_post_thumbnail.php:444
+msgid "gif"
+msgstr ""
+
+#: magic_post_thumbnail.php:445
+msgid "bmp"
+msgstr ""
+
+#: magic_post_thumbnail.php:457
+msgid "Restricts image search to one of the following specific file types"
+msgstr "Restreint la recherche d'image à un seul type d'image"
+
+#: magic_post_thumbnail.php:464
+msgid "Rights"
+msgstr "Droits d'utilisation"
+
+#: magic_post_thumbnail.php:468
+msgid ""
+"Choose these options can reduce relevance of results, but permit to use free-"
+"to-use images."
+msgstr ""
+"Ces options peuvent réduire la pertinence des résultats, mais permet "
+"d'utiliser des images libre de droit."
+
+#: magic_post_thumbnail.php:472
+msgid ""
+"Publicdomain - <i>restricts search results to images with the publicdomain "
+"label.</i>"
+msgstr ""
+
+#: magic_post_thumbnail.php:473
+msgid ""
+"Attribute - <i>restricts search results to images with the attribute label."
+msgstr ""
+
+#: magic_post_thumbnail.php:474
+msgid ""
+"Sharealike - <i>restricts search results to images with the sharealike label."
+msgstr ""
+
+#: magic_post_thumbnail.php:475
+msgid ""
+"Noncommercial - <i>restricts search results to images with the noncomercial "
+"label."
+msgstr ""
+
+#: magic_post_thumbnail.php:476
+msgid ""
+"Nonderived - <i>restricts search results to images with the nonderived label."
+"</i>"
+msgstr ""
+
+#: magic_post_thumbnail.php:493
+msgid "Image size"
+msgstr "T'aille d'image"
+
+#: magic_post_thumbnail.php:502
+msgid "icon"
+msgstr ""
+
+#: magic_post_thumbnail.php:503
+msgid "small"
+msgstr ""
+
+#: magic_post_thumbnail.php:504
+msgid "medium"
+msgstr ""
+
+#: magic_post_thumbnail.php:505
+msgid "large"
+msgstr ""
+
+#: magic_post_thumbnail.php:506
+msgid "xlarge"
+msgstr ""
+
+#: magic_post_thumbnail.php:507
+msgid "xxlarge"
+msgstr ""
+
+#: magic_post_thumbnail.php:508
+msgid "huge"
+msgstr ""
+
+#: magic_post_thumbnail.php:523
+msgid "Image Type"
+msgstr "Type d'image"
+
+#: magic_post_thumbnail.php:532
+msgid "Face"
+msgstr "Visage"
+
+#: magic_post_thumbnail.php:533
+msgid "Photo"
+msgstr ""
+
+#: magic_post_thumbnail.php:534
+msgid "Clipart"
+msgstr ""
+
+#: magic_post_thumbnail.php:535
+msgid "Lineart"
+msgstr ""
+
+#: magic_post_thumbnail.php:549
+msgid "Safety level"
+msgstr ""
+
+#: magic_post_thumbnail.php:557
+msgid "Moderate (default)"
+msgstr "Modéré (par défaut)"
+
+#: magic_post_thumbnail.php:558
+msgid "Active"
+msgstr "Activé"
+
+#: magic_post_thumbnail.php:559
+msgid "Off"
+msgstr "Désactivé"
+
+#: magic_post_thumbnail.php:575
 msgid "Save Options"
 msgstr "Enregistrer les modifications"
 
-#: magic_post_thumbnail.php:285
-msgid ""
-"Sorry, your server require allow_url_fopen ON, please update your server "
-"before using this plugin"
-msgstr ""
-"Désolé, allow_url_fopen doit être activé, veuillez s'il vous plait mettre à "
-"jour votre serveur afin d'utiliser ce plugin."
-
-#: magic_post_thumbnail.php:321
+#: magic_post_thumbnail.php:625
 msgid "Settings"
 msgstr "Paramètres"
 
-#: magic_post_thumbnail.php:360
+#: magic_post_thumbnail.php:664
 msgid "Plugin enabled for this post"
 msgstr "Plugin activé sur cet article"
+
+#~ msgid "Choose your language"
+#~ msgstr "Choisissez votre langue"
+
+#~ msgid "Choose your database"
+#~ msgstr "Choisissez votre base d'images"
+
+#~ msgid ""
+#~ "Only Pixabay is available now, but others databases will be available "
+#~ "with next versions"
+#~ msgstr ""
+#~ "Pixabay est le seul disponible maintenant, d'autres bases d'images seront "
+#~ "dispo dans les prochaines versions"
+
+#~ msgid "Portuguese"
+#~ msgstr "Portugais"
+
+#~ msgid "Chinese"
+#~ msgstr "Chinois"
+
+#~ msgid ""
+#~ "Sorry, your server require allow_url_fopen ON, please update your server "
+#~ "before using this plugin"
+#~ msgstr ""
+#~ "Désolé, allow_url_fopen doit être activé, veuillez s'il vous plait mettre "
+#~ "à jour votre serveur afin d'utiliser ce plugin."
 
 #~ msgid "Safe mode protects images sexually explicit"
 #~ msgstr "Le mode Safe protège des images à caractère sexuel explicite"
