@@ -19,6 +19,7 @@ Retrieve first image from **Google Images** thanks to Google API, based on your 
 Settings allow you to configure some settings for your automatics images : Language search, posts types chosen, image type, free-to-use or not, image size and much more.
 
 You can :
+
 * Generate thumbnail for one post
 * Generate thumbnails massively for chosen posts
 * Generate automatically thumbnails : **Now compatible with WPeMatico**
