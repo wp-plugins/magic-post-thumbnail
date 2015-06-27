@@ -3,7 +3,7 @@
 Plugin Name: Magic Post Thumbnail
 Plugin URI: http://wordpress.org/plugins/magic-post-thumbnail/
 Description: Automatically add a thumbnail for your posts. Retrieve first image from the database Google Image based on post title and add it as your featured thumbnail when you publish/update it.
-Version: 2.2
+Version: 2.2.1
 Author: Alexandre Gaboriau
 Author URI: http://www.alexandregaboriau.fr/
 Text Domain: 'mpt'
@@ -81,6 +81,8 @@ class MPT_backoffice {
 	
 	/* Retrieve Image from Database, save it into Media Library, and attach it to the post as featured image */
     public function MPT_create_thumb( $id, $check_value_enable = 1, $check_post_type = 1 ) {
+		
+		header('Content-type:text/html; charset=utf-8');
 
         if(  !current_user_can('upload_files') && !class_exists( 'WPeMatico' ) )
 			return false;
@@ -127,6 +129,7 @@ class MPT_backoffice {
 		}
 		
 		$search = get_the_title( $id );
+		
 		
 		/* Try for first 5 images */
 		for( $start=0; $start<5; $start++ ) {
@@ -176,7 +179,8 @@ class MPT_backoffice {
 		$imgextension = str_replace( $filetype, $extensions, $file_media['headers']['content-type'] );
 		
 		/* Image filename : title.extension */
-		$filename = wp_unique_filename( $wp_upload_dir['path'], sanitize_title($search) . '.' . $imgextension );
+		$search =  str_replace( '%', '', sanitize_title( $search ) ); // Remove % for non-latin characters
+		$filename = wp_unique_filename( $wp_upload_dir['path'], $search . '.' . $imgextension );
 		$folder = $wp_upload_dir['path'] .'/'. $filename;
 		
 		if( $file_media['response']['code'] != '200' || empty( $file_media['body'] ) )

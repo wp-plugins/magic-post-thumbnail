@@ -1,14 +1,14 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           2.2
+Version:           2.2.1
 Tags:              automatic, thumbnail, featured, image, generate, google image, scraping, google api, google, magic, empty 
-Contributors:      mcurly
+Contributors:      Mcurly
 Author URI:        alexandregaboriau.fr
 Author:            Alexandre Gaboriau
-Donate link:       http://www.alexandregaboriau.fr/donate.html
+Donate link:       http://www.alexandregaboriau.fr/
 Requires at least: 3.0
 Tested up to:      4.2.2
-Stable tag:        2.2
+Stable tag:        2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ You can :
 * Generate automatically thumbnails : **Now compatible with WPeMatico**
 * Now compatible with every WP installs ( no more CURL & allow_url_fopen needed )
 
-Free free to <a href="http://www.alexandregaboriau.fr/">contact me directly</a> if you have any  suggestion or warn me about a bug.
+Free free to <a href="http://www.alexandregaboriau.fr/" rel="">contact me directly</a> if you have any  suggestion or warn me about a bug.
 
 
 == Translations ==
@@ -59,6 +59,9 @@ Magic post thumbnail is improving progressively. Feel free to post on the forum 
 
 == Changelog ==
 
+= 2.2.1 =
+	* Bug fix for non-latin image filename
+	
 = 2.2 =
 	* No more CURL or allow_url_fopen used. Replaced by WP function wp_remote_request() : More secure and compatible
 	* Images better scrapped
