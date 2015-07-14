@@ -3,7 +3,7 @@
 	if( !isset( $_POST['ids'] ) )
 		return false;
 	
-	require_once('../../../wp-blog-header.php');
+	require_once('../../../../wp-blog-header.php');
 	
 	// For servers which block ajax calls
 	header('HTTP/1.1 200 OK');

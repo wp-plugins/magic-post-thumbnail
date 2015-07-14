@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Magic Post Thumbnail\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-10 13:49+0100\n"
-"PO-Revision-Date: 2015-06-10 13:51+0100\n"
+"POT-Creation-Date: 2015-07-14 09:32+0200\n"
+"PO-Revision-Date: 2015-07-14 09:33+0200\n"
 "Last-Translator: \n"
 "Language-Team: g.alex17@gmail.com\n"
 "Language: fr_FR\n"
@@ -13,484 +13,544 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: ../\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: generate.php:23
-msgid "Thumbnail's image of "
-msgstr "L'image à la une de "
+#: inc/admin/flickr.php:10 inc/admin/google_image.php:185
+msgid "Rights"
+msgstr "Droits d'utilisation"
 
-#: generate.php:23
-msgid " already exist"
-msgstr "existe déjà"
+#: inc/admin/flickr.php:14
+msgid ""
+"Choose which licence works for pictures. Licences chosen are cumulative."
+msgstr ""
+"Choisissez quelles licences s'appliquent pour les images. Les licences "
+"choisies se cumulent."
 
-#: generate.php:27
-msgid "No image for "
-msgstr "Pas d'image pour"
+#: inc/admin/flickr.php:15
+msgid "If none of these options are chosen, every licences will be used."
+msgstr ""
+"Si aucune des options n'est choisie, toutes les licences seront utilisées."
 
-#: generate.php:29
-msgid "Successful image creation for "
-msgstr "Création de l'image réussie pour "
+#: inc/admin/flickr.php:19
+msgid "All Rights Reserved"
+msgstr "Tous Droits Réservés"
 
-#: generate.php:31
-msgid "Error while creating image"
-msgstr "Erreur lors de la création de l'image"
-
-#: generate.php:44
-msgid "Successful generation"
-msgstr "Génération réussie"
-
-#: magic_post_thumbnail.php:75
-msgid "Generate Magic Post thumbnail"
+#: inc/admin/flickr.php:20
+msgid ""
+"Attribution-NonCommercial-ShareAlike License - <i><a href=\"http://"
+"creativecommons.org/licenses/by-nc-sa/2.0/\" target=\"_blank\">More detail</"
+"a></i>"
 msgstr ""
 
-#: magic_post_thumbnail.php:249
-msgid "You do not have sufficient permissions to access this page."
-msgstr "Vous n'avez pas d'autorisations suffisantes pour accéder à cette page."
+#: inc/admin/flickr.php:21
+msgid ""
+"Attribution-NonCommercial License - <i><a href=\"http://creativecommons.org/"
+"licenses/by-nc/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
 
-#: magic_post_thumbnail.php:256
-msgid "Search Preferences"
-msgstr "Préférences de recherche"
+#: inc/admin/flickr.php:22
+msgid ""
+"Attribution-NonCommercial-NoDerivs License - <i><a href=\"http://"
+"creativecommons.org/licenses/by-nc-nd/2.0/\" target=\"_blank\">More detail</"
+"a></i>"
+msgstr ""
 
-#: magic_post_thumbnail.php:268
+#: inc/admin/flickr.php:23
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/"
+"by/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+
+#: inc/admin/flickr.php:24
+msgid ""
+"Attribution License - <i><a href=\"http://creativecommons.org/licenses/by-"
+"sa/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+
+#: inc/admin/flickr.php:25
+msgid ""
+"Attribution-NoDerivs License - <i><a href=\"http://creativecommons.org/"
+"licenses/by-nd/2.0/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+
+#: inc/admin/flickr.php:26
+msgid ""
+"No known copyright restrictions - <i><a href=\"http://flickr.com/commons/"
+"usage/\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+
+#: inc/admin/flickr.php:27
+msgid ""
+"United States Government Work - <i><a href=\"http://www.usa.gov/copyright."
+"shtml\" target=\"_blank\">More detail</a></i>"
+msgstr ""
+
+#: inc/admin/flickr.php:48 inc/admin/google_image.php:244
+#: inc/admin/pixabay.php:10
+msgid "Image Type"
+msgstr "Type d'image"
+
+#: inc/admin/flickr.php:56 inc/admin/pixabay.php:18 inc/admin/pixabay.php:90
+msgid "-- All --"
+msgstr "-- Tout --"
+
+#: inc/admin/flickr.php:57 inc/admin/google_image.php:254
+#: inc/admin/pixabay.php:19
+msgid "Photo"
+msgstr "Photo"
+
+#: inc/admin/flickr.php:58 inc/admin/pixabay.php:20
+msgid "Screenshot"
+msgstr "Capture d'écran"
+
+#: inc/admin/flickr.php:59 inc/admin/pixabay.php:21
+msgid "Other"
+msgstr "Autre"
+
+#: inc/admin/flickr.php:60
+msgid "Photo and screenshot"
+msgstr "Photo et capture d'écran"
+
+#: inc/admin/flickr.php:61
+msgid "Screenshot and \"other\""
+msgstr "Captures d'écran et \"autre\""
+
+#: inc/admin/flickr.php:62
+msgid "Photo and \"other\""
+msgstr "Photo et \"autre\""
+
+#: inc/admin/google_image.php:10 inc/admin/pixabay.php:35
 msgid "Choose the language"
 msgstr "Choisissez la langue"
 
-#: magic_post_thumbnail.php:275
+#: inc/admin/google_image.php:17
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
-#: magic_post_thumbnail.php:276
+#: inc/admin/google_image.php:18
 msgid "Albanian"
 msgstr "Albanais"
 
-#: magic_post_thumbnail.php:277
+#: inc/admin/google_image.php:19
 msgid "Amharic"
 msgstr "Amharique"
 
-#: magic_post_thumbnail.php:278
+#: inc/admin/google_image.php:20
 msgid "Arabic"
 msgstr "Arabe"
 
-#: magic_post_thumbnail.php:279
+#: inc/admin/google_image.php:21
 msgid "Azerbaijani"
 msgstr "Azerbaïdjanais"
 
-#: magic_post_thumbnail.php:280
+#: inc/admin/google_image.php:22
 msgid "Basque"
 msgstr "Basque"
 
-#: magic_post_thumbnail.php:281
+#: inc/admin/google_image.php:23
 msgid "Belarusian"
 msgstr "Biélorusse"
 
-#: magic_post_thumbnail.php:282
+#: inc/admin/google_image.php:24
 msgid "Bengali"
 msgstr "Bengali"
 
-#: magic_post_thumbnail.php:283
+#: inc/admin/google_image.php:25
 msgid "Bihari"
 msgstr "Bihari"
 
-#: magic_post_thumbnail.php:284
+#: inc/admin/google_image.php:26
 msgid "Bosnian"
 msgstr "Bosnie"
 
-#: magic_post_thumbnail.php:285
+#: inc/admin/google_image.php:27 inc/admin/pixabay.php:62
 msgid "Bulgarian"
 msgstr "Bulgare"
 
-#: magic_post_thumbnail.php:286
+#: inc/admin/google_image.php:28
 msgid "Catalan"
 msgstr "Catalan"
 
-#: magic_post_thumbnail.php:287
+#: inc/admin/google_image.php:29
 msgid "Chinese (Simplified)"
 msgstr "Chinois (Simplifié)"
 
-#: magic_post_thumbnail.php:288
+#: inc/admin/google_image.php:30
 msgid "Chinese (Traditional)"
 msgstr "Chinois (traditionnel)"
 
-#: magic_post_thumbnail.php:289
+#: inc/admin/google_image.php:31
 msgid "Croatian"
 msgstr "Croate"
 
-#: magic_post_thumbnail.php:290
+#: inc/admin/google_image.php:32 inc/admin/pixabay.php:42
 msgid "Czech"
 msgstr "Tchèque"
 
-#: magic_post_thumbnail.php:291
+#: inc/admin/google_image.php:33 inc/admin/pixabay.php:43
 msgid "Danish"
 msgstr "Danois"
 
-#: magic_post_thumbnail.php:292
+#: inc/admin/google_image.php:34 inc/admin/pixabay.php:51
 msgid "Dutch"
 msgstr "Néerlandais"
 
-#: magic_post_thumbnail.php:293
+#: inc/admin/google_image.php:35 inc/admin/pixabay.php:45
 msgid "English"
 msgstr "Anglais"
 
-#: magic_post_thumbnail.php:294
+#: inc/admin/google_image.php:36
 msgid "Esperanto"
 msgstr "Espéranto"
 
-#: magic_post_thumbnail.php:295
+#: inc/admin/google_image.php:37
 msgid "Estonian"
 msgstr "Estonien"
 
-#: magic_post_thumbnail.php:296
+#: inc/admin/google_image.php:38
 msgid "Faroese"
 msgstr "Féroïen"
 
-#: magic_post_thumbnail.php:297
+#: inc/admin/google_image.php:39 inc/admin/pixabay.php:57
 msgid "Finnish"
 msgstr "Finlandais"
 
-#: magic_post_thumbnail.php:298
+#: inc/admin/google_image.php:40 inc/admin/pixabay.php:47
 msgid "French"
 msgstr "Francais"
 
-#: magic_post_thumbnail.php:299
+#: inc/admin/google_image.php:41
 msgid "Frisian"
 msgstr "Frison"
 
-#: magic_post_thumbnail.php:300
+#: inc/admin/google_image.php:42
 msgid "Galician"
 msgstr "Galicienne"
 
-#: magic_post_thumbnail.php:301
+#: inc/admin/google_image.php:43
 msgid "Georgian"
 msgstr "Géorgien"
 
-#: magic_post_thumbnail.php:302
+#: inc/admin/google_image.php:44 inc/admin/pixabay.php:44
 msgid "German"
 msgstr "Allemand"
 
-#: magic_post_thumbnail.php:303
+#: inc/admin/google_image.php:45 inc/admin/pixabay.php:64
 msgid "Greek"
 msgstr "Grecque"
 
-#: magic_post_thumbnail.php:304
+#: inc/admin/google_image.php:46
 msgid "Gujarati"
 msgstr "Gujarati"
 
-#: magic_post_thumbnail.php:305
+#: inc/admin/google_image.php:47
 msgid "Hebrew"
 msgstr "Hébreu"
 
-#: magic_post_thumbnail.php:306
+#: inc/admin/google_image.php:48
 msgid "Hindi"
 msgstr "Hindi"
 
-#: magic_post_thumbnail.php:307
+#: inc/admin/google_image.php:49 inc/admin/pixabay.php:50
 msgid "Hungarian"
 msgstr "Hongroise"
 
-#: magic_post_thumbnail.php:308
+#: inc/admin/google_image.php:50
 msgid "Icelandic"
 msgstr "Islandais"
 
-#: magic_post_thumbnail.php:309
+#: inc/admin/google_image.php:51 inc/admin/pixabay.php:48
 msgid "Indonesian"
 msgstr "Indonesien"
 
-#: magic_post_thumbnail.php:310
+#: inc/admin/google_image.php:52
 msgid "Interlingua"
 msgstr "Interlingua"
 
-#: magic_post_thumbnail.php:311
+#: inc/admin/google_image.php:53
 msgid "Irish"
 msgstr "Irlandais"
 
-#: magic_post_thumbnail.php:312
+#: inc/admin/google_image.php:54 inc/admin/pixabay.php:49
 msgid "Italian"
 msgstr "Italien"
 
-#: magic_post_thumbnail.php:313
+#: inc/admin/google_image.php:55 inc/admin/pixabay.php:65
 msgid "Japanese"
 msgstr "Japonais"
 
-#: magic_post_thumbnail.php:314
+#: inc/admin/google_image.php:56
 msgid "Javanese"
 msgstr "Javanais"
 
-#: magic_post_thumbnail.php:315
+#: inc/admin/google_image.php:57
 msgid "Kannada"
 msgstr "Kannada"
 
-#: magic_post_thumbnail.php:316
+#: inc/admin/google_image.php:58 inc/admin/pixabay.php:66
 msgid "Korean"
 msgstr "Coréen"
 
-#: magic_post_thumbnail.php:317
+#: inc/admin/google_image.php:59
 msgid "Latin"
 msgstr "Latin"
 
-#: magic_post_thumbnail.php:318
+#: inc/admin/google_image.php:60
 msgid "Latvian"
 msgstr "Letton"
 
-#: magic_post_thumbnail.php:319
+#: inc/admin/google_image.php:61
 msgid "Lithuanian"
 msgstr "Lituanien"
 
-#: magic_post_thumbnail.php:320
+#: inc/admin/google_image.php:62
 msgid "Macedonian"
 msgstr "Macédonien"
 
-#: magic_post_thumbnail.php:321
+#: inc/admin/google_image.php:63
 msgid "Malay"
 msgstr "Malais"
 
-#: magic_post_thumbnail.php:322
+#: inc/admin/google_image.php:64
 msgid "Malayam"
 msgstr "Malayam"
 
-#: magic_post_thumbnail.php:323
+#: inc/admin/google_image.php:65
 msgid "Maltese"
 msgstr "Maltais"
 
-#: magic_post_thumbnail.php:324
+#: inc/admin/google_image.php:66
 msgid "Marathi"
 msgstr "Marathi"
 
-#: magic_post_thumbnail.php:325
+#: inc/admin/google_image.php:67
 msgid "Nepali"
 msgstr "Népalais"
 
-#: magic_post_thumbnail.php:326
+#: inc/admin/google_image.php:68 inc/admin/pixabay.php:52
 msgid "Norwegian"
 msgstr "Norvégien"
 
-#: magic_post_thumbnail.php:327
+#: inc/admin/google_image.php:69
 msgid "Norwegian (Nynorsk)"
 msgstr "Norvégien (Nynorsk)"
 
-#: magic_post_thumbnail.php:328
+#: inc/admin/google_image.php:70
 msgid "Occitan"
 msgstr "Occitan"
 
-#: magic_post_thumbnail.php:329
+#: inc/admin/google_image.php:71
 msgid "Persian"
 msgstr "Persan"
 
-#: magic_post_thumbnail.php:330
+#: inc/admin/google_image.php:72 inc/admin/pixabay.php:53
 msgid "Polish"
 msgstr "Polonais"
 
-#: magic_post_thumbnail.php:331
+#: inc/admin/google_image.php:73
 msgid "Portuguese (Brazil)"
 msgstr "Portugais (Brésil)"
 
-#: magic_post_thumbnail.php:332
+#: inc/admin/google_image.php:74
 msgid "Portuguese (Portugal)"
 msgstr "Portugais (Portugal)"
 
-#: magic_post_thumbnail.php:333
+#: inc/admin/google_image.php:75
 msgid "Punjabi"
 msgstr "Punjabi"
 
-#: magic_post_thumbnail.php:334
+#: inc/admin/google_image.php:76 inc/admin/pixabay.php:55
 msgid "Romanian"
 msgstr "Roumain"
 
-#: magic_post_thumbnail.php:335
+#: inc/admin/google_image.php:77 inc/admin/pixabay.php:63
 msgid "Russian"
 msgstr "Russe"
 
-#: magic_post_thumbnail.php:336
+#: inc/admin/google_image.php:78
 msgid "Scots Gaelic"
 msgstr "Gaélique écossais"
 
-#: magic_post_thumbnail.php:337
+#: inc/admin/google_image.php:79
 msgid "Serbian"
 msgstr "Serbe"
 
-#: magic_post_thumbnail.php:338
+#: inc/admin/google_image.php:80
 msgid "Sinhalese"
 msgstr "Cinghalais"
 
-#: magic_post_thumbnail.php:339
+#: inc/admin/google_image.php:81 inc/admin/pixabay.php:56
 msgid "Slovak"
 msgstr "Slovaque"
 
-#: magic_post_thumbnail.php:340
+#: inc/admin/google_image.php:82
 msgid "Slovenian"
 msgstr "Slovène"
 
-#: magic_post_thumbnail.php:341
+#: inc/admin/google_image.php:83 inc/admin/pixabay.php:46
 msgid "Spanish"
 msgstr "Espagnol"
 
-#: magic_post_thumbnail.php:342
+#: inc/admin/google_image.php:84
 msgid "Sudanese"
 msgstr "Soudanais"
 
-#: magic_post_thumbnail.php:343
+#: inc/admin/google_image.php:85
 msgid "Swahili"
 msgstr "Swahili"
 
-#: magic_post_thumbnail.php:344
+#: inc/admin/google_image.php:86 inc/admin/pixabay.php:58
 msgid "Swedish"
 msgstr "Suédois"
 
-#: magic_post_thumbnail.php:345
+#: inc/admin/google_image.php:87
 msgid "Tagalog"
 msgstr "Tagalog"
 
-#: magic_post_thumbnail.php:346
+#: inc/admin/google_image.php:88
 msgid "Tamil"
 msgstr "Tamil"
 
-#: magic_post_thumbnail.php:347
+#: inc/admin/google_image.php:89
 msgid "Telugu"
 msgstr "Telugu"
 
-#: magic_post_thumbnail.php:348
+#: inc/admin/google_image.php:90 inc/admin/pixabay.php:61
 msgid "Thai"
 msgstr "Thaïlandais"
 
-#: magic_post_thumbnail.php:349
+#: inc/admin/google_image.php:91
 msgid "Tigrinya"
 msgstr "Tigrinya"
 
-#: magic_post_thumbnail.php:350
+#: inc/admin/google_image.php:92 inc/admin/pixabay.php:59
 msgid "Turkish"
 msgstr "Turc"
 
-#: magic_post_thumbnail.php:351
+#: inc/admin/google_image.php:93
 msgid "Ukrainian"
 msgstr "Ukrainien"
 
-#: magic_post_thumbnail.php:352
+#: inc/admin/google_image.php:94
 msgid "Urdu"
 msgstr "Urdu"
 
-#: magic_post_thumbnail.php:353
+#: inc/admin/google_image.php:95
 msgid "Uzbek"
 msgstr "Ouzbek"
 
-#: magic_post_thumbnail.php:354
+#: inc/admin/google_image.php:96 inc/admin/pixabay.php:60
 msgid "Vietnamese"
 msgstr "Vietnamien"
 
-#: magic_post_thumbnail.php:355
+#: inc/admin/google_image.php:97
 msgid "Welsh"
 msgstr "Gallois"
 
-#: magic_post_thumbnail.php:356
+#: inc/admin/google_image.php:98
 msgid "Xhosa"
 msgstr "Xhosa"
 
-#: magic_post_thumbnail.php:357
+#: inc/admin/google_image.php:99
 msgid "Zulu"
 msgstr "Zoulou"
 
-#: magic_post_thumbnail.php:372
-msgid "Relevant post type"
-msgstr "Type de contenus concernés"
-
-#: magic_post_thumbnail.php:393
+#: inc/admin/google_image.php:114
 msgid "Specified color predominantly"
 msgstr "Couleur principale"
 
-#: magic_post_thumbnail.php:401 magic_post_thumbnail.php:441
-#: magic_post_thumbnail.php:501 magic_post_thumbnail.php:531
+#: inc/admin/google_image.php:122 inc/admin/google_image.php:162
+#: inc/admin/google_image.php:222 inc/admin/google_image.php:252
 msgid "-- Default --"
 msgstr "- Par défaut -"
 
-#: magic_post_thumbnail.php:402
+#: inc/admin/google_image.php:123
 msgid "Black"
 msgstr "Noir"
 
-#: magic_post_thumbnail.php:403
+#: inc/admin/google_image.php:124
 msgid "Blue"
 msgstr "Bleu"
 
-#: magic_post_thumbnail.php:404
+#: inc/admin/google_image.php:125
 msgid "Brown"
 msgstr "Marron"
 
-#: magic_post_thumbnail.php:405
+#: inc/admin/google_image.php:126
 msgid "Gray"
 msgstr "Gris"
 
-#: magic_post_thumbnail.php:406
+#: inc/admin/google_image.php:127
 msgid "Green"
 msgstr "Vert"
 
-#: magic_post_thumbnail.php:407
+#: inc/admin/google_image.php:128
 msgid "Orange"
 msgstr "Orange"
 
-#: magic_post_thumbnail.php:408
+#: inc/admin/google_image.php:129
 msgid "Pink"
 msgstr "Rose"
 
-#: magic_post_thumbnail.php:409
+#: inc/admin/google_image.php:130
 msgid "Purple"
 msgstr "Violet"
 
-#: magic_post_thumbnail.php:410
+#: inc/admin/google_image.php:131
 msgid "Red"
 msgstr "Rouge"
 
-#: magic_post_thumbnail.php:411
+#: inc/admin/google_image.php:132
 msgid "Teal"
 msgstr "Bleu-vert"
 
-#: magic_post_thumbnail.php:412
+#: inc/admin/google_image.php:133
 msgid "White"
 msgstr "Blanc"
 
-#: magic_post_thumbnail.php:413
+#: inc/admin/google_image.php:134
 msgid "Yellow"
 msgstr "Jaune"
 
-#: magic_post_thumbnail.php:425
+#: inc/admin/google_image.php:146
 msgid "Experimental"
-msgstr ""
+msgstr "Expérimental"
 
-#: magic_post_thumbnail.php:426
+#: inc/admin/google_image.php:147
 msgid ""
 "Restricts results to images that contain a specified color predominantly"
 msgstr ""
 "Limite les résultats aux images qui contiennent une couleur prédominante"
 
-#: magic_post_thumbnail.php:433
+#: inc/admin/google_image.php:154
 msgid "Filetype"
 msgstr "Type de fichier"
 
-#: magic_post_thumbnail.php:442
+#: inc/admin/google_image.php:163
 msgid "jpg"
 msgstr ""
 
-#: magic_post_thumbnail.php:443
+#: inc/admin/google_image.php:164
 msgid "png"
 msgstr ""
 
-#: magic_post_thumbnail.php:444
+#: inc/admin/google_image.php:165
 msgid "gif"
 msgstr ""
 
-#: magic_post_thumbnail.php:445
+#: inc/admin/google_image.php:166
 msgid "bmp"
 msgstr ""
 
-#: magic_post_thumbnail.php:457
+#: inc/admin/google_image.php:178
 msgid "Restricts image search to one of the following specific file types"
 msgstr "Restreint la recherche d'image à un seul type d'image"
 
-#: magic_post_thumbnail.php:464
-msgid "Rights"
-msgstr "Droits d'utilisation"
-
-#: magic_post_thumbnail.php:468
+#: inc/admin/google_image.php:189
 msgid ""
 "Choose these options can reduce relevance of results, but permit to use free-"
 "to-use images."
@@ -498,113 +558,223 @@ msgstr ""
 "Ces options peuvent réduire la pertinence des résultats, mais permet "
 "d'utiliser des images libre de droit."
 
-#: magic_post_thumbnail.php:472
+#: inc/admin/google_image.php:193
 msgid ""
 "Publicdomain - <i>restricts search results to images with the publicdomain "
 "label.</i>"
 msgstr ""
 
-#: magic_post_thumbnail.php:473
+#: inc/admin/google_image.php:194
 msgid ""
 "Attribute - <i>restricts search results to images with the attribute label."
 msgstr ""
 
-#: magic_post_thumbnail.php:474
+#: inc/admin/google_image.php:195
 msgid ""
 "Sharealike - <i>restricts search results to images with the sharealike label."
 msgstr ""
 
-#: magic_post_thumbnail.php:475
+#: inc/admin/google_image.php:196
 msgid ""
 "Noncommercial - <i>restricts search results to images with the noncomercial "
 "label."
 msgstr ""
 
-#: magic_post_thumbnail.php:476
+#: inc/admin/google_image.php:197
 msgid ""
 "Nonderived - <i>restricts search results to images with the nonderived label."
 "</i>"
 msgstr ""
 
-#: magic_post_thumbnail.php:493
+#: inc/admin/google_image.php:214
 msgid "Image size"
 msgstr "T'aille d'image"
 
-#: magic_post_thumbnail.php:502
+#: inc/admin/google_image.php:223
 msgid "icon"
-msgstr ""
+msgstr "icône"
 
-#: magic_post_thumbnail.php:503
+#: inc/admin/google_image.php:224
 msgid "small"
-msgstr ""
+msgstr "petite"
 
-#: magic_post_thumbnail.php:504
+#: inc/admin/google_image.php:225
 msgid "medium"
-msgstr ""
+msgstr "moyenne"
 
-#: magic_post_thumbnail.php:505
+#: inc/admin/google_image.php:226
 msgid "large"
-msgstr ""
+msgstr "grand"
 
-#: magic_post_thumbnail.php:506
+#: inc/admin/google_image.php:227
 msgid "xlarge"
-msgstr ""
+msgstr "très grand"
 
-#: magic_post_thumbnail.php:507
+#: inc/admin/google_image.php:228
 msgid "xxlarge"
-msgstr ""
+msgstr "très très grand"
 
-#: magic_post_thumbnail.php:508
+#: inc/admin/google_image.php:229
 msgid "huge"
-msgstr ""
+msgstr "énorme"
 
-#: magic_post_thumbnail.php:523
-msgid "Image Type"
-msgstr "Type d'image"
-
-#: magic_post_thumbnail.php:532
+#: inc/admin/google_image.php:253
 msgid "Face"
 msgstr "Visage"
 
-#: magic_post_thumbnail.php:533
-msgid "Photo"
-msgstr ""
-
-#: magic_post_thumbnail.php:534
+#: inc/admin/google_image.php:255
 msgid "Clipart"
 msgstr ""
 
-#: magic_post_thumbnail.php:535
+#: inc/admin/google_image.php:256
 msgid "Lineart"
 msgstr ""
 
-#: magic_post_thumbnail.php:549
+#: inc/admin/google_image.php:270
 msgid "Safety level"
-msgstr ""
+msgstr "Filtre adulte"
 
-#: magic_post_thumbnail.php:557
+#: inc/admin/google_image.php:278
 msgid "Moderate (default)"
 msgstr "Modéré (par défaut)"
 
-#: magic_post_thumbnail.php:558
+#: inc/admin/google_image.php:279 inc/admin/pixabay.php:138
 msgid "Active"
 msgstr "Activé"
 
-#: magic_post_thumbnail.php:559
+#: inc/admin/google_image.php:280 inc/admin/pixabay.php:137
 msgid "Off"
 msgstr "Désactivé"
 
-#: magic_post_thumbnail.php:575
-msgid "Save Options"
-msgstr "Enregistrer les modifications"
+#: inc/admin/main.php:10
+msgid "Search Preferences"
+msgstr "Préférences de recherche"
 
-#: magic_post_thumbnail.php:625
+#: inc/admin/main.php:32
+msgid "Relevant post type"
+msgstr "Type de contenus concernés"
+
+#: inc/admin/main.php:53
+msgid "Title"
+msgstr "Titre"
+
+#: inc/admin/main.php:57
+msgid "Search picture according title"
+msgstr "Rechercher les images selon le titre"
+
+#: inc/admin/main.php:59
+msgid "Full title"
+msgstr "Titre complet"
+
+#: inc/admin/main.php:60
+msgid "Part of the title"
+msgstr "Une partie du titre"
+
+#: inc/admin/main.php:61
+msgid "first words of the title"
+msgstr "premiers mots du titre"
+
+#: inc/admin/main.php:67
+msgid "Image bank"
+msgstr "Banque d'image"
+
+#: inc/admin/main.php:71
+msgid "Choose which database you want to search for pictures"
+msgstr "Choisissez dans quelle banque d'images vous voulez rechercher"
+
+#: inc/admin/main.php:75
+msgid "Google Image"
+msgstr ""
+
+#: inc/admin/main.php:76
+msgid "Flickr"
+msgstr ""
+
+#: inc/admin/main.php:77
+msgid "Pixabay"
+msgstr ""
+
+#: inc/admin/pixabay.php:54
+msgid "Portuguese"
+msgstr "Portugais"
+
+#: inc/admin/pixabay.php:67
+msgid "Chinese"
+msgstr "Chinois"
+
+#: inc/admin/pixabay.php:82
+msgid "Orientation"
+msgstr ""
+
+#: inc/admin/pixabay.php:91
+msgid "Horizontal"
+msgstr ""
+
+#: inc/admin/pixabay.php:92
+msgid "Vertical"
+msgstr ""
+
+#: inc/admin/pixabay.php:107
+msgid "Minimum width"
+msgstr "Largeur minimale"
+
+#: inc/admin/pixabay.php:118
+msgid "Minimum height"
+msgstr "Hauteur minimale"
+
+#: inc/admin/pixabay.php:129
+msgid "Safesearch"
+msgstr "Recherche Sécurisée"
+
+#: inc/generate.php:23
+msgid "Thumbnail's image of "
+msgstr "L'image à la une de "
+
+#: inc/generate.php:23
+msgid " already exist"
+msgstr "existe déjà"
+
+#: inc/generate.php:27
+msgid "No image for "
+msgstr "Pas d'image pour"
+
+#: inc/generate.php:29
+msgid "Successful image creation for "
+msgstr "Création de l'image réussie pour "
+
+#: inc/generate.php:31
+msgid "Error while creating image"
+msgstr "Erreur lors de la création de l'image"
+
+#: inc/generate.php:44
+msgid "Successful generation"
+msgstr "Génération réussie"
+
+#: magic_post_thumbnail.php:78
+msgid "Generate Magic Post thumbnail"
+msgstr ""
+
+#: magic_post_thumbnail.php:394
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Vous n'avez pas d'autorisations suffisantes pour accéder à cette page."
+
+#: magic_post_thumbnail.php:418
 msgid "Settings"
 msgstr "Paramètres"
 
-#: magic_post_thumbnail.php:664
+#: magic_post_thumbnail.php:457
 msgid "Plugin enabled for this post"
 msgstr "Plugin activé sur cet article"
+
+#~ msgid "Choose which pictures database you want to search for pictures"
+#~ msgstr ""
+#~ "Choisissez dans quelle banque d'images vous voulez rechercher des images"
+
+#~ msgid "Database"
+#~ msgstr "Base d'image"
+
+#~ msgid "Save Options"
+#~ msgstr "Enregistrer les modifications"
 
 #~ msgid "Choose your language"
 #~ msgstr "Choisissez votre langue"
@@ -618,12 +788,6 @@ msgstr "Plugin activé sur cet article"
 #~ msgstr ""
 #~ "Pixabay est le seul disponible maintenant, d'autres bases d'images seront "
 #~ "dispo dans les prochaines versions"
-
-#~ msgid "Portuguese"
-#~ msgstr "Portugais"
-
-#~ msgid "Chinese"
-#~ msgstr "Chinois"
 
 #~ msgid ""
 #~ "Sorry, your server require allow_url_fopen ON, please update your server "

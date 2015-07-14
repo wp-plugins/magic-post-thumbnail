@@ -6,6 +6,11 @@
 .legend_post_type {
 	width: 300px;
 }
+#hide-before-import {
+	width: 98%;
+	padding: 15px 0 10px;
+	border-bottom: 1px solid;
+}
 #results {
 	margin-top: 25px;
 	color: red;

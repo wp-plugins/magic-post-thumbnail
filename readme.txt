@@ -1,28 +1,28 @@
 === Magic Post Thumbnail ===
 Plugin Name:       Magic Post Thumbnail
-Version:           2.2.1
-Tags:              automatic, thumbnail, featured, image, generate, google image, scraping, google api, google, magic, empty 
+Version:           2.3
+Tags:              automatic, thumbnail, featured, image, generate, google image, google api, flickr, pixabay, scraping, image bank, google, magic, empty 
 Contributors:      Mcurly
 Author URI:        alexandregaboriau.fr
 Author:            Alexandre Gaboriau
 Donate link:       http://www.alexandregaboriau.fr/
-Requires at least: 3.0
+Requires at least: 4.0
 Tested up to:      4.2.2
-Stable tag:        2.2.1
+Stable tag:        2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Automatically generate thumbnails for your posts. Magic Post Thumbnail use Google API to create an Automatic Featured Image.
+Automatically generate thumbnails for your posts. Magic Post Thumbnail use Google Image/Flickr/Pixabay to create an Automatic Featured Image.
 
 == Description ==
 Automatically **generate thumbnails for your posts** !
 
-Retrieve first image from **Google Images** thanks to Google API, based on your post title and add it as your featured thumbnail when you publish the post.
-Settings allow you to configure some settings for your automatics images : Language search, posts types chosen, image type, free-to-use or not, image size and much more.
+Retrieve first image from **Google Images**, **Flickr** or **Pixabay** thanks to API, based on your post title and add picture as your featured thumbnail when you publish the post.
+Settings allow you to configure some settings for your automatics images : Image bank, language search, posts types chosen, image type, free-to-use or not, image size and much more.
 
 You can :
 
-* Generate thumbnail for one post
+* Generate thumbnail for one post ( or page, custom post type... )
 * Generate thumbnails massively for chosen posts
 * Generate automatically thumbnails : **Now compatible with WPeMatico**
 * Now compatible with every WP installs ( no more CURL & allow_url_fopen needed )
@@ -40,7 +40,6 @@ Magic post thumbnail is improving progressively. Feel free to post on the forum 
 
 * Add Google API Key
 * Make it compatible with others autoblogging plugin, like WPeMatico now
-* Include others images database like yahoo/bing, pixabay etc...
 * Create a configurable cron
 * More translations (you can help)
 
@@ -51,13 +50,19 @@ Magic post thumbnail is improving progressively. Feel free to post on the forum 
 == Installation ==
 1. Activate the plugin
 2. Go to Settings > Magic Post Thumbnail
-3. Configure your settings and which post type you want to enable it
+3. Configure your settings, which post type you want to enable it and the image bank.
 4. Go into a post or create one, choose "Plugin enabled for this post" on the sidebar. Update/Create the post and your thumbnail is generated as featured image !
-5. You can also mass generate thumbnails for posts. Go into the list of your posts, choose posts you want to get thumbnails and into "Bulk Actions" choose "Generate Magic Post thumbnail"
+5. You can also **mass generate thumbnails** for posts. Go into the list of your posts, choose posts you want to get thumbnails and into "Bulk Actions" choose "Generate Magic Post thumbnail"
 
 
 
 == Changelog ==
+
+= 2.3 =
+	* Add Flickr & Pixabay API
+	* Improve checking image file type
+	* Possibility to select a part of the title
+	* Remove some bugs while scraping
 
 = 2.2.1 =
 	* Bug fix for non-latin image filename
@@ -96,9 +101,6 @@ Magic post thumbnail is improving progressively. Feel free to post on the forum 
 	* Generation didn't work anymore with some selected countries in the list. Fixed.
 	* Choice to generate thumbnail or not regardless for each post
 	* Mass generation of post thumbnails with Action "Generate Magic Post thumbnail"
-	
-= 1.2.1 =
-	* Last Plugin update fail.. not complete. Fixed.
 	
 = 1.2 =
 	* Add "tbm=isch" at the end of the scraping Google URL. Otherwise it doesn't work any more.
