@@ -5,7 +5,6 @@ Tags:              automatic, thumbnail, featured, image, generate, google image
 Contributors:      Mcurly
 Author URI:        alexandregaboriau.fr
 Author:            Alexandre Gaboriau
-Donate link:       http://www.alexandregaboriau.fr/
 Requires at least: 4.0
 Tested up to:      4.2.2
 Stable tag:        2.3
@@ -26,8 +25,6 @@ You can :
 * Generate thumbnails massively for chosen posts
 * Generate automatically thumbnails : **Now compatible with WPeMatico**
 * Now compatible with every WP installs ( no more CURL & allow_url_fopen needed )
-
-Free free to <a href="http://www.alexandregaboriau.fr/" rel="">contact me directly</a> if you have any  suggestion or warn me about a bug.
 
 
 == Translations ==
